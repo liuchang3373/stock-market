@@ -1,0 +1,9 @@
+[
+  {"SectorName":"Finance","DeltDaUp":false,"Change":57},
+  {"SectorName":"Technoloy","DeltDaUp":true,"Change":62},
+  {"SectorName":"Food","DeltDaUp":true,"Change":10},
+  {"SectorName":"Industry","DeltDaUp":true,"Change":49},
+  {"SectorName":"Shipping","DeltDaUp":false,"Change":51},
+  {"SectorName":"Product","DeltDaUp":true,"Change":82},
+  {"SectorName":"Architect","DeltDaUp":false,"Change":52}
+]

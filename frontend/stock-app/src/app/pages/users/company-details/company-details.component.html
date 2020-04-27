@@ -1,0 +1,48 @@
+<div class="accordions-container row">
+  <div class="accordion-container col-md-12 col-lg-12 col-xxxl-12">
+   <nb-card>
+      <nb-card-header>Company Stock Information</nb-card-header>
+       <nb-card-body>
+        Company code: {{companyDetailsData.CompanyCode}}; Sector: {{companyDetailsData.Sector}}; Exchange: {{companyDetailsData.StockExchange}}
+       </nb-card-body>
+    </nb-card>
+    
+    <nb-accordion multi>
+      <nb-accordion-item #item>
+        <nb-accordion-item-header>
+          Stock Price Chart
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <fsd-stock-chart ></fsd-stock-chart>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          Turnover
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          {{companyDetailsData.Turnover}}
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          CEO
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          {{companyDetailsData.CEO}}
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+      
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          About 
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          {{companyDetailsData.About}}
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+  </div>
+</div>

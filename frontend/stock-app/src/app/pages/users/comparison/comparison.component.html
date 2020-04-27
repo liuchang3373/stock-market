@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-md-12">
+        <nb-card>
+            <nb-card-header>
+              Comparison
+            </nb-card-header>
+            <nb-card-body>
+                <div class="row">
+                    <div class="col-md-6">
+                        <nb-card>
+                            <nb-card-header class="comparison-header">Compare Company Stock Price</nb-card-header>
+                            <nb-card-body>
+                                <nb-card>
+                                    <nb-card-header class="companycomparison-header">Select one or two companies:</nb-card-header>
+                                        <nb-card-body>
+                                            <ngx-different-company></ngx-different-company>
+                                        </nb-card-body>
+                                </nb-card>
+                                <nb-card>
+                                    <nb-card-header class="companycomparison-header">Select date:</nb-card-header>
+                                        <nb-card-body>
+                                            <ngx-date-picker></ngx-date-picker>
+                                        </nb-card-body>
+                                </nb-card>
+                                <button nbButton fullWidth size="large" status="primary" (click)='gotoComparisonChart()'> Generate Chart</button>
+                            </nb-card-body>
+                        </nb-card>
+                    </div>
+                    <div class="col-md-6">
+                        <nb-card>
+                            <nb-card-header class="comparison-header">Compare Sector Stock Price</nb-card-header>
+                            <nb-card-body>
+                                <nb-card>
+                                    <nb-card-header class="companycomparison-header">Select one or two Sectors:</nb-card-header>
+                                        <nb-card-body>
+                                            <ngx-different-sector></ngx-different-sector>
+                                        </nb-card-body>
+                                </nb-card>
+                                <nb-card>
+                                    <nb-card-header class="companycomparison-header">Select date:</nb-card-header>
+                                        <nb-card-body>
+                                            <ngx-date-picker></ngx-date-picker>
+                                        </nb-card-body>
+                                </nb-card>
+                                <button nbButton fullWidth size="large" status="primary"> Generate Chart</button>
+                            </nb-card-body>
+                        </nb-card>
+                    </div>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
+
+
+
+
+

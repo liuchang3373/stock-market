@@ -1,0 +1,72 @@
+[
+  {
+  "ID": 1,
+  "CompanyName": "HiberJ(HJ)",
+  "Sector": "Finance",
+  "Stockexchange": "UK",
+  "PricePerShare": 43.11,
+  "TotalNumberShares": 23670,
+  "OpenDateTime": "2020-04-12",
+  "Remarks": "XXXXXXX"
+  }, 
+  {
+    "ID": 2,
+    "CompanyName": "Cooper(CP)",
+    "Sector": "Tech",
+    "Stockexchange": "CN",
+    "PricePerShare": 9.32,
+    "TotalNumberShares": 10092,
+    "OpenDateTime": "2020-04-13",
+    "Remarks": "XXXXXXX"
+  },
+  {
+    "ID": 3,
+    "CompanyName": "YahhoB(YB)",
+    "Sector": "Tech",
+    "Stockexchange": "CN",
+    "PricePerShare": 4.13,
+    "TotalNumberShares": 33343,
+    "OpenDateTime": "2020-04-14",
+    "Remarks": "XXXXXXX"
+  },
+  {
+    "ID": 4,
+    "CompanyName": "Roouas(RA)",
+    "Sector": "Tech",
+    "Stockexchange": "CN",
+    "PricePerShare": 4.13,
+    "TotalNumberShares": 33343,
+    "OpenDateTime": "2020-04-15",
+    "Remarks": "XXXXXXX"
+  },
+  {
+    "ID": 5,
+    "CompanyName": "YahhoB(YB)",
+    "Sector": "Tech",
+    "Stockexchange": "CN",
+    "PricePerShare": 4.13,
+    "TotalNumberShares": 33343,
+    "OpenDateTime": "2020-04-16",
+    "Remarks": "XXXXXXX"
+  },
+  {
+    "ID": 6,
+    "CompanyName": "YahhoB(YB)",
+    "Sector": "Tech",
+    "Stockexchange": "CN",
+    "PricePerShare": 4.13,
+    "TotalNumberShares": 33343,
+    "OpenDateTime": "2020-04-17",
+    "Remarks": "XXXXXXX"
+  },
+  {
+    "ID": 7,
+    "CompanyName": "YahhoB(YB)",
+    "Sector": "Tech",
+    "Stockexchange": "CN",
+    "PricePerShare": 4.13,
+    "TotalNumberShares": 33343,
+    "OpenDateTime": "2020-04-18",
+    "Remarks": "XXXXXXX"
+  }
+]

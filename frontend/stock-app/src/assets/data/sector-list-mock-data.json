@@ -1,0 +1,27 @@
+[
+  {
+  "ID": 1,
+  "Name": "Finance",
+  "Brife": "oooooo"
+  }, 
+  {
+  "ID": 2,
+  "Name": "Technology",
+  "Brife": "oooooo"
+  },
+  {
+  "ID": 3,
+  "Name": "Shipping",
+  "Brife": "oooooo"
+  },
+  {
+    "ID": 4,
+    "Name": "Product",
+    "Brife": "oooooo"
+  },
+  {
+    "ID": 5,
+    "Name": "Food",
+    "Brife": "oooooo"
+  }
+]

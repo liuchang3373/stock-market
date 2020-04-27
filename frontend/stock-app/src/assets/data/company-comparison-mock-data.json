@@ -1,0 +1,39 @@
+{
+  "company1": 
+  [
+    {
+      "x": "Mon", "low": 3.1, "high": 10.8
+    },
+    {
+      "x": "Tue", "low": 5.1, "high": 8.8
+    },
+    {
+      "x": "Web", "low": 1.1, "high": 4.8
+    },
+    {
+      "x": "Thu", "low": 6.1, "high": 8.8
+    },
+    {
+      "x": "Fri", "low": 4.1, "high": 7.8
+    }
+  ],
+  "company2": 
+  [
+    {
+      "x": "Mon", "low": 2.1, "high": 9.8
+    },
+    {
+      "x": "Tue", "low": 4.1, "high": 7.8
+    },
+    {
+      "x": "Web", "low": 2.1, "high": 6.8
+    },
+    {
+      "x": "Thu", "low": 4.1, "high": 5.8
+    },
+    {
+      "x": "Fri", "low": 2.1, "high": 8.8
+    }
+  ]
+
+}
