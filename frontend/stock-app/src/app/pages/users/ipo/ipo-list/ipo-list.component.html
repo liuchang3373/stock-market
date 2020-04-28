@@ -1,5 +1,10 @@
+<div id="action-description">
+  <p>IPO table list shows the recently IPOs with the details</p>
+</div>
 <div class="control-section">
-  <ejs-grid #grid [dataSource]='data'  allowSorting=true allowPaging=true allowSearching=true allowSelection=true allowFiltering=true [pageSettings]='pageSettings' [toolbar]='toolbar' (rowSelected)='rowSelected($event)'>
+  <ejs-grid #grid [dataSource]='data'  allowSorting=true allowGrouping=true allowPaging=true 
+  allowSearching=true allowSelection=true allowFiltering=true [pageSettings]='pageSettings' 
+  [toolbar]='toolbar' (rowSelected)='rowSelected($event)' (dataBound)='dataBound()' (created)='created()' (load)='load()'>
       <e-columns>
           <e-column field='CompanyName' headerText='Company Name' width='140' textAlign='Center'></e-column>
           <e-column field='Sector' headerText='Sector' width='100' textAlign='Center'></e-column>
@@ -10,4 +15,6 @@
           <e-column field='Remarks' headerText='Remarks' width='100' textAlign='Center'></e-column>
       </e-columns>
   </ejs-grid>
+  <ejs-dialog #alertDialog [buttons]='alertDlgButtons' [visible]='hidden' [header]='alertHeader' [animationSettings]='animationSettings' [content]='alertContent' [showCloseIcon]='showCloseIcon' [target]='target' [width]='alertWidth'>
+  </ejs-dialog>
 </div>

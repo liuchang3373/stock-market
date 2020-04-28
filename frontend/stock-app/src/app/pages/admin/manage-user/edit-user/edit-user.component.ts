@@ -4,7 +4,7 @@ import { UserService } from '../../../../@core/service/user.service';
 
 
 @Component({
-  selector: 'ngx-edit-user',
+  selector: 'fsd-edit-user',
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.css']
 })

@@ -5,7 +5,9 @@
 
 $nb-themes: nb-register-theme((
   layout-padding-top: 2.25rem,
-
+  sidebar-width: 12rem,
+  footer-height: 1.5rem,
+  footer-text-font-size: 0.8rem,
   menu-item-icon-margin: 0 0.5rem 0 0,
 
   card-height-tiny: 13.5rem,
@@ -26,7 +28,9 @@ $nb-themes: nb-register-theme((
 
 $nb-themes: nb-register-theme((
   layout-padding-top: 2.25rem,
-
+  sidebar-width: 12rem,
+  footer-height: 1.5rem,
+  footer-text-font-size: 0.8rem,
   menu-item-icon-margin: 0 0.5rem 0 0,
 
   card-height-tiny: 13.5rem,
@@ -47,7 +51,9 @@ $nb-themes: nb-register-theme((
 
 $nb-themes: nb-register-theme((
   layout-padding-top: 2.25rem,
-
+  sidebar-width: 12rem,
+  footer-height: 1.5rem,
+  footer-text-font-size: 0.8rem,
   menu-item-icon-margin: 0 0.5rem 0 0,
 
   card-height-tiny: 13.5rem,
@@ -68,7 +74,9 @@ $nb-themes: nb-register-theme((
 
 $nb-themes: nb-register-theme((
   layout-padding-top: 2.25rem,
-
+  sidebar-width: 12rem,
+  footer-height: 1.5rem,
+  footer-text-font-size: 0.8rem,
   menu-item-icon-margin: 0 0.5rem 0 0,
 
   card-height-tiny: 13.5rem,
@@ -79,7 +87,7 @@ $nb-themes: nb-register-theme((
   card-margin-bottom: 1.875rem,
   card-header-with-select-padding-top: 0.5rem,
   card-header-with-select-padding-bottom: 0.5rem,
-
+  
   select-min-width: 6rem,
 
   slide-out-background: linear-gradient(270deg, #222b45 0%, #151a30 100%),

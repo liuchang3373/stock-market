@@ -3,7 +3,7 @@ import { UploaderComponent, SelectedEventArgs, FileInfo, RemovingEventArgs } fro
 
 
 @Component({
-  selector: 'ngx-file-upload',
+  selector: 'fsd-file-upload',
   templateUrl: './file-upload.component.html',
   styleUrls: ['./file-upload.component.css']
 })

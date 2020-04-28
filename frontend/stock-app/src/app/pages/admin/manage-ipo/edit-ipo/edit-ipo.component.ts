@@ -3,7 +3,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 import { IPOListService } from '../../../../@core/service/ipo-list.service';
 
 @Component({
-  selector: 'ngx-edit-ipo',
+  selector: 'fsd-edit-ipo',
   templateUrl: './edit-ipo.component.html',
   styleUrls: ['./edit-ipo.component.css']
 })

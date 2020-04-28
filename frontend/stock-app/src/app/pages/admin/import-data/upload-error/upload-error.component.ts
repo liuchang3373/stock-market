@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'ngx-upload-error',
+  selector: 'fsd-upload-error',
   templateUrl: './upload-error.component.html',
   styleUrls: ['./upload-error.component.css']
 })

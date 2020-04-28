@@ -6,11 +6,7 @@ import { of as observableOf } from 'rxjs';
 
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import {
-  AnalyticsService,
-  LayoutService,
-  PlayerService,
-  SeoService,
-  StateService,
+  LayoutService
 } from './utils';
 
 
@@ -30,20 +26,10 @@ import { ExchangeEditListService } from './service/exchange-edit-list.service';
 
 const socialLinks = [
   {
-    url: 'https://github.com/akveo/nebular',
+    url: 'https://github.com/liuchang3373/stock-market',
     target: '_blank',
     icon: 'github',
-  },
-  {
-    url: 'https://www.facebook.com/akveo/',
-    target: '_blank',
-    icon: 'facebook',
-  },
-  {
-    url: 'https://twitter.com/akveo_inc',
-    target: '_blank',
-    icon: 'twitter',
-  },
+  }
 ];
 
 const DATA_SERVICES = [
@@ -104,11 +90,8 @@ export const NB_CORE_PROVIDERS = [
   {
     provide: NbRoleProvider, useClass: NbSimpleRoleProvider,
   },
-  AnalyticsService,
   LayoutService,
-  PlayerService,
-  SeoService,
-  StateService,
+
 ];
 
 @NgModule({

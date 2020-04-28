@@ -3,7 +3,7 @@ import { SectorChangeModel } from '../../../../@core/model/sectorModel';
 import { SectorListService } from '../../../../@core/service/sector-list.service';
 
 @Component({
-  selector: 'ngx-sector-change',
+  selector: 'fsd-sector-change',
   templateUrl: './sector-change.component.html',
   styleUrls: ['./sector-change.component.scss']
 })

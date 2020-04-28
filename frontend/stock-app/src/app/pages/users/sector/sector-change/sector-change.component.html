@@ -1,28 +1,25 @@
 <div class="row">
   <div class="col-md-12">
-<nb-card>
-
+<nb-card status="success">
   <nb-card-header>
-    <span>Sector</span>
+    <span>sector changes today</span>
   </nb-card-header>
-  
-      <nb-card *ngFor="let item of sectorChangeData">
-      <nb-card-body>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="visited-date">
-            {{ item.SectorName }}
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="delta value" [class.up]="item.DeltDaUp" [class.down]="!item.DeltDaUp">
-            <nb-icon [icon]="item.DeltDaUp ? 'arrow-up' : 'arrow-down'" pack="eva"></nb-icon>
-            {{ item.Change }}%
-          </div>
-        </div>
+  <nb-card-body *ngFor="let item of sectorChangeData" status="control">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="visited-date">
+        {{ item.SectorName }}
       </div>
-      </nb-card-body>
-    </nb-card>
+    </div>
+    <div class="col-md-6">
+      <div class="delta value" [class.up]="item.DeltDaUp" [class.down]="!item.DeltDaUp">
+        <nb-icon [icon]="item.DeltDaUp ? 'arrow-up' : 'arrow-down'" pack="eva"></nb-icon>
+        {{ item.Change }}%
+      </div>
+    </div>
+  </div>
+  </nb-card-body>
+  
 
 </nb-card>
 </div>

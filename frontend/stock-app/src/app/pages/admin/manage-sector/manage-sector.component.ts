@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-manage-sector',
+  selector: 'fsd-manage-sector',
   templateUrl: './manage-sector.component.html',
 })
 export class ManageSectorComponent {

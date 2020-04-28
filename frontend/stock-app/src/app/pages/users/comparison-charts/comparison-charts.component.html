@@ -1,11 +1,19 @@
-<div class="control-section">
-  <div align='center'>
-      <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)'>
-          <e-series-collection>
-              <e-series [dataSource]='company1' type='RangeColumn' xName='x' high='high' low='low' name='APPLE' width=2> </e-series>
-              <e-series [dataSource]='company2' type='RangeColumn' xName='x' high='high' low='low' name='FACEBOOK' width=2> </e-series>
-          </e-series-collection>
-      </ejs-chart>
-  </div>
-</div>
+<nb-card status='primary'>
+    <nb-card-header>
+        Company comparison
+    </nb-card-header>
+    <nb-card-body>
+        <div align='center'>
+            <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)'>
+                <e-series-collection>
+                    <e-series [dataSource]='company1' type='RangeColumn' xName='x' high='high' low='low' name='APPLE' width=2> </e-series>
+                    <e-series [dataSource]='company2' type='RangeColumn' xName='x' high='high' low='low' name='FACEBOOK' width=2> </e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </nb-card-body>
+</nb-card>
+
+
+
 

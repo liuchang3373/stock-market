@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { CompanyListService } from '../../../../@core/service/company-list.service';
 
 @Component({
-  selector: 'ngx-different-company',
+  selector: 'fsd-different-company',
   templateUrl: './different-company.component.html',
   styleUrls: ['./different-company.component.css'],
   encapsulation: ViewEncapsulation.None

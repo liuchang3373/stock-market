@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 
 @Component({
-  selector: 'ngx-date-picker',
+  selector: 'fsd-date-picker',
   templateUrl: './date-picker.component.html',
   styleUrls: ['./date-picker.component.css'],
   encapsulation: ViewEncapsulation.None

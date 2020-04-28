@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { SectorListService } from '../../../../@core/service/sector-list.service';
 
 @Component({
-  selector: 'ngx-different-sector',
+  selector: 'fsd-different-sector',
   templateUrl: './different-sector.component.html',
   styleUrls: ['./different-sector.component.css'],
   encapsulation: ViewEncapsulation.None

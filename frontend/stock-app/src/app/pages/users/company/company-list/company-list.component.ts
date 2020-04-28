@@ -6,7 +6,7 @@ import { Router ,NavigationExtras} from '@angular/router';
 import { CompanyListService } from '../../../../@core/service/company-list.service';
 
 @Component({
-  selector: 'ngx-company-list',
+  selector: 'fsd-company-list',
   templateUrl: './company-list.component.html',
   styleUrls: ['./company-list.component.scss'],
   providers: [PageService, SortService, FilterService, GroupService, SearchService, ToolbarService ]

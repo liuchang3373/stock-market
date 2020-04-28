@@ -13,7 +13,7 @@ export class StockChartComponent implements OnInit{
    public title: string;
 
    ngOnInit(): void {
-      this.title = 'Efficiency of oil-fired power production';
+      this.title = 'APPLE';
       this.primaryXAxis = {
       valueType: 'DateTime'
     };

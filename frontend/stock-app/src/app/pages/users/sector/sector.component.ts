@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-sector',
+  selector: 'fsd-sector',
   templateUrl: './sector.component.html',
 })
 export class SectorComponent {

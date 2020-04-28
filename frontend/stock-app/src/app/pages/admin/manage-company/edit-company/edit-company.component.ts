@@ -3,7 +3,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 
 import { CompanyListService } from '../../../../@core/service/company-list.service';
 @Component({
-  selector: 'ngx-edit-company',
+  selector: 'fsd-edit-company',
   templateUrl: './edit-company.component.html',
   styleUrls: ['./edit-company.component.css']
 })

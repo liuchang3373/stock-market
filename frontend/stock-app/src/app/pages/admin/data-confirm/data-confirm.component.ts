@@ -6,7 +6,7 @@ import { ToolbarItems, GridComponent} from '@syncfusion/ej2-angular-grids';
 import { PageService, SortService, FilterService, SearchService, ToolbarService  } from '@syncfusion/ej2-angular-grids';
 import { StockPriceImportService } from '../../../@core/service/stock-price-import.service';
 @Component({
-  selector: 'ngx-data-confirm',
+  selector: 'fsd-data-confirm',
   templateUrl: 'data-confirm.component.html',
   styleUrls: ['./data-confirm.component.css'],
   providers: [PageService, SortService, FilterService, SearchService, ToolbarService ]

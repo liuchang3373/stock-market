@@ -2,11 +2,8 @@ import { NgModule } from '@angular/core';
 import {
   NbButtonModule,
   NbCardModule,
-  NbUserModule,
-  NbInputModule,
   NbDialogModule
 } from '@nebular/theme';
-import { ThemeModule } from '../../../@theme/theme.module';
 import { DataConfirmComponent } from './data-confirm.component';
 import { GridModule  } from '@syncfusion/ej2-angular-grids';
 import { UploadResultComponent } from './upload-result/upload-result.component';
@@ -15,10 +12,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
-    ThemeModule,
     NbCardModule,
-	  NbInputModule,
-    NbUserModule,
     NbButtonModule,
     GridModule,
     NbDialogModule,

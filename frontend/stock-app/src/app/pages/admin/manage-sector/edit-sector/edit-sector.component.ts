@@ -4,7 +4,7 @@ import { SectorListService } from '../../../../@core/service/sector-list.service
 
 
 @Component({
-  selector: 'ngx-edit-sector',
+  selector: 'fsd-edit-sector',
   templateUrl: './edit-sector.component.html',
   styleUrls: ['./edit-sector.component.css']
 })

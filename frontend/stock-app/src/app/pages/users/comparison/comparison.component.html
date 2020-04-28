@@ -1,25 +1,25 @@
 <div class="row">
     <div class="col-md-12">
-        <nb-card>
+        <nb-card status="primary">
             <nb-card-header>
               Comparison
             </nb-card-header>
             <nb-card-body>
                 <div class="row">
                     <div class="col-md-6">
-                        <nb-card>
+                        <nb-card status="control" accent="danger">
                             <nb-card-header class="comparison-header">Compare Company Stock Price</nb-card-header>
                             <nb-card-body>
-                                <nb-card>
+                                <nb-card accent="info">
                                     <nb-card-header class="companycomparison-header">Select one or two companies:</nb-card-header>
                                         <nb-card-body>
-                                            <ngx-different-company></ngx-different-company>
+                                            <fsd-different-company></fsd-different-company>
                                         </nb-card-body>
                                 </nb-card>
-                                <nb-card>
+                                <nb-card accent="info">
                                     <nb-card-header class="companycomparison-header">Select date:</nb-card-header>
                                         <nb-card-body>
-                                            <ngx-date-picker></ngx-date-picker>
+                                            <fsd-date-picker></fsd-date-picker>
                                         </nb-card-body>
                                 </nb-card>
                                 <button nbButton fullWidth size="large" status="primary" (click)='gotoComparisonChart()'> Generate Chart</button>
@@ -27,19 +27,19 @@
                         </nb-card>
                     </div>
                     <div class="col-md-6">
-                        <nb-card>
+                        <nb-card status="control" accent="success">
                             <nb-card-header class="comparison-header">Compare Sector Stock Price</nb-card-header>
                             <nb-card-body>
-                                <nb-card>
+                                <nb-card accent="info">
                                     <nb-card-header class="companycomparison-header">Select one or two Sectors:</nb-card-header>
                                         <nb-card-body>
-                                            <ngx-different-sector></ngx-different-sector>
+                                            <fsd-different-sector></fsd-different-sector>
                                         </nb-card-body>
                                 </nb-card>
-                                <nb-card>
+                                <nb-card accent="info">
                                     <nb-card-header class="companycomparison-header">Select date:</nb-card-header>
                                         <nb-card-body>
-                                            <ngx-date-picker></ngx-date-picker>
+                                            <fsd-date-picker></fsd-date-picker>
                                         </nb-card-body>
                                 </nb-card>
                                 <button nbButton fullWidth size="large" status="primary"> Generate Chart</button>

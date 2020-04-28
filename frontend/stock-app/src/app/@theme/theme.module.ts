@@ -29,9 +29,7 @@ import {
   NumberWithCommasPipe,
 } from './pipes';
 import {
-  OneColumnLayoutComponent,
-  ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent,
+  OneColumnLayoutComponent
 } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
@@ -57,8 +55,6 @@ const COMPONENTS = [
   FooterComponent,
   SearchInputComponent,
   OneColumnLayoutComponent,
-  ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent
 ];
 const PIPES = [
   CapitalizePipe,

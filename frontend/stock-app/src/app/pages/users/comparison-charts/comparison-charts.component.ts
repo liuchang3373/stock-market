@@ -4,7 +4,7 @@ import { CompanyComparisonService } from '../../../@core/service/company-compari
 
 
 @Component({
-  selector: 'ngx-comparison-charts',
+  selector: 'fsd-comparison-charts',
   templateUrl: './comparison-charts.component.html',
 })
 export class ComparisonChartsComponent {
@@ -31,7 +31,7 @@ public title: string;
 public ngOnInit(): void {
       this.company1 = this.data1;
       this.company2 = this.data2;
-      this.title = "Company comparison"
+      this.title = "Apple VS Facebook"
       //console.log("service111: " +  this.company1[0]);
 }
 constructor(private service: CompanyComparisonService) {

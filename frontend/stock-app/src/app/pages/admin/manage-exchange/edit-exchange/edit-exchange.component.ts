@@ -3,7 +3,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 
 import {  ExchangeEditListService } from '../../../../@core/service/exchange-edit-list.service';
 @Component({
-  selector: 'ngx-edit-exchange',
+  selector: 'fsd-edit-exchange',
   templateUrl: './edit-exchange.component.html',
   styleUrls: ['./edit-exchange.component.css']
 })

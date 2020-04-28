@@ -3,7 +3,7 @@ import { CompanyDetailsService } from '../../../@core/service/company-details.se
 import { CompanyModel } from '../../../@core/model/companyModel';
 
 @Component({
-  selector: 'ngx-company-details',
+  selector: 'fsd-company-details',
   templateUrl: './company-details.component.html',
   styleUrls: ['company-details.component.scss']
 })

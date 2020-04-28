@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import {
   NbCardModule,
-  NbProgressBarModule,
-  NbUserModule,
   NbButtonModule
 } from '@nebular/theme';
-import { ThemeModule } from '../../../@theme/theme.module';
+
 import { ComparisonComponent } from './comparison.component';
 import { MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
@@ -18,10 +16,7 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 
 @NgModule({
   imports: [
-    ThemeModule,
     NbCardModule,
-    NbUserModule,
-    NbProgressBarModule,
     MultiSelectAllModule,
     NumericTextBoxModule,
     CheckBoxModule,

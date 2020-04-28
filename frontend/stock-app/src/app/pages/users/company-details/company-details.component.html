@@ -3,7 +3,29 @@
    <nb-card>
       <nb-card-header>Company Stock Information</nb-card-header>
        <nb-card-body>
-        Company code: {{companyDetailsData.CompanyCode}}; Sector: {{companyDetailsData.Sector}}; Exchange: {{companyDetailsData.StockExchange}}
+        <div class="row">
+          <div class="col-md-4">
+            <nb-card status="primary">
+              <nb-card-header>
+                Company code: {{companyDetailsData.CompanyCode}}
+              </nb-card-header>
+            </nb-card>
+          </div>
+          <div class="col-md-4">
+            <nb-card status="danger">
+              <nb-card-header>
+                Exchange: {{companyDetailsData.StockExchange}}
+              </nb-card-header>
+            </nb-card>
+          </div>
+          <div class="col-md-4">
+            <nb-card status="info">
+              <nb-card-header>
+                Sector: {{companyDetailsData.Sector}}
+              </nb-card-header>
+            </nb-card>
+          </div>
+        </div>
        </nb-card-body>
     </nb-card>
     

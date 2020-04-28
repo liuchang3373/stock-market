@@ -3,7 +3,7 @@ import { NbDialogRef } from '@nebular/theme';
 import { Router ,NavigationExtras} from '@angular/router';
 
 @Component({
-  selector: 'ngx-upload-result',
+  selector: 'fsd-upload-result',
   templateUrl: './upload-result.component.html',
   styleUrls: ['./upload-result.component.css']
 })

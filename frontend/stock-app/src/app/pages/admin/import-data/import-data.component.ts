@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router ,NavigationExtras} from '@angular/router';
 
 @Component({
-  selector: 'ngx-import-data',
+  selector: 'fsd-import-data',
   templateUrl: './import-data.component.html',
 })
 export class ImportDataComponent {

@@ -166,14 +166,14 @@
       }
     }
   },
-  "defaultProject": "ngx-fsd-stock",
+  "defaultProject": "fsd-stock",
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "ngx",
+      "prefix": "fsd",
       "style": "scss"
     },
     "@schematics/angular:directive": {
-      "prefix": "ngx"
+      "prefix": "fsd"
     }
   }
 }

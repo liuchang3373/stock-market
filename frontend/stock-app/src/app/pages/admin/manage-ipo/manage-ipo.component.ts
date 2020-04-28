@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-manage-ipo',
+  selector: 'fsd-manage-ipo',
   templateUrl: './manage-ipo.component.html',
 })
 export class ManageIpoComponent {
