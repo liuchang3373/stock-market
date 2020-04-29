@@ -21,6 +21,7 @@ https://github.com/liuchang3373/stock-market/tree/master/frontend/stock-app
 https://github.com/liuchang3373/stock-market/tree/master/frontend/stock-app/src/app/%40core/service
 
 - Routing: 
+    
     AppRoutingModule: https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/app-routing.module.ts
 
     AuthRoutingModule: https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/auth/auth-routing.module.ts
