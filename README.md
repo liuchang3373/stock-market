@@ -22,9 +22,13 @@ https://github.com/liuchang3373/stock-market/tree/master/frontend/stock-app/src/
 
 - Routing: 
 AppRoutingModule: https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/app-routing.module.ts
+
 AuthRoutingModule: https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/auth/auth-routing.module.ts
+
 AdminRoutingModule: https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/pages/admin/admin-routing.module.ts
+
 UsersRoutingModule: https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/pages/users/users-routing.module.ts
+
 
 - Pipes: 
 https://github.com/liuchang3373/stock-market/tree/master/frontend/stock-app/src/app/%40theme/pipes
@@ -34,6 +38,7 @@ https://github.com/liuchang3373/stock-market/tree/master/frontend/stock-app/src/
 
 - Unit Testing:
 user.service: https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/%40core/service/service-test/user.service.spec.ts
+
 Test result:
 ![unit test result of user service ](https://github.com/liuchang3373/stock-market/blob/master/document/unit-test-result.png "unit test result of user service ")
 
