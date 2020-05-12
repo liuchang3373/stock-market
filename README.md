@@ -1,5 +1,45 @@
 # stock-market
 
+### Milestone 3 (Submitted by Jack.Liu on 5/12/2020)
+
+###### *Micro-services Structure:*  
+![Micro-services structure](https://github.com/liuchang3373/stock-market/blob/master/document/micro-services-document/micro-services-structure.png "Micro-services structure")
+
+###### Individual Micro-services:
+Each Services with an API client, this API client will be only used by internal services.
+- Company-svc with Company-api
+- Exchange-svc with Exchange-api
+- Sector-svc with Sector-api
+- StockPrice-svc with StockPrice-api
+- Email-svc with Email-api
+- User-svc with User-api
+
+###### *API Document and Unit Testing:*
+###### Swagger Document:
+Company Swagger Document:  https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/Company_Swagger_UI.pdf
+
+Company API Doument: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/Company_api_doc.json
+
+Exchange Swagger Document: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/Exchange_Swagger_UI.pdf
+
+Exchange API Doument: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/Exchange_api_doc.json
+
+Sector Swagger Document: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/Sector_Swagger_UI.pdf
+
+Sector API Doument: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/Sector_api_doc.json
+
+User Swagger Document: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/User_Swagger_UI.pdf
+
+User API Doument: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/User_api_doc.json
+
+Stock Price Swagger Document: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/StockPrice_Swagger_UI.pdf
+
+Stock Price API Doument: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/StockPrice_api_doc.json
+
+Email Swagger Document: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/Email_Swagger_UI.pdf
+
+Email API Doument: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/Email_api_doc.json
+
 ### Milestone 1
 
 ###### *Design document:*  
