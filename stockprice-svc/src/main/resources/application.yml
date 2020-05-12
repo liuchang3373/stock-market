@@ -1,0 +1,24 @@
+# application.yml
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: stockprice-service
+  datasource:
+    url: ${STOCKPRICE_DATASOURCE_URL}
+    username: ${STOCKPRICE_DATASOURCE_USERNAME}
+    password: ${STOCKPRICE_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+            
+stock:
+  company-service-endpoint: ${COMPANY_SERVICE_ENDPOINT}
+  exchange-service-endpoint: ${EXCHANGE_SERVICE_ENDPOINT}
+  user-service-endpoint: ${USER_SERVICE_ENDPOINT}
+  sector-service-endpoint: ${SECTOR_SERVICE_ENDPOINT}
+  stockprice-service-endpoint: ${STOCKPRICE_SERVICE_ENDPOINT}
+  email-service-endpoint: ${EMAIL_SERVICE_ENDPOINT}
+  gateway-service-endpoint: ${GATEWAY_SERVICE_ENDPOINT}

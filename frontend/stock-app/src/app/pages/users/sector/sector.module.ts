@@ -7,7 +7,7 @@ import {
 } from '@nebular/theme';
 import { SectorComponent } from './sector.component';
 import { SectorChangeComponent } from './sector-change/sector-change.component';
-
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   imports: [
@@ -15,6 +15,7 @@ import { SectorChangeComponent } from './sector-change/sector-change.component';
     NbButtonModule,
     NbIconModule,
     NbListModule,
+    CommonModule
   ],
   declarations: [
     SectorComponent, SectorChangeComponent

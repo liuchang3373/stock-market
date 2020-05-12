@@ -1,0 +1,2 @@
+logging:
+  config: /etc/stock/logback-spring.xml

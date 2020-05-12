@@ -1,6 +1,6 @@
+target/
 # front end
 /frontend/stock-app/node_modules
-
 # eclipse
 .project
 .classpath

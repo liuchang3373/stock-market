@@ -17,7 +17,7 @@ export class StockChartComponent implements OnInit{
       this.primaryXAxis = {
       valueType: 'DateTime'
     };
-      
+    console.log("stockchartData: " + this.stockchartData[0]);
   }
   
   constructor(private service: CompanyStockService) {
@@ -25,7 +25,7 @@ export class StockChartComponent implements OnInit{
     .subscribe(
       (data)=> { 
         this.stockchartData = data 
-        console.log("service: " + data[0].date);
+        //console.log("service: " + data[0].date);
       },
       err => console.error(err),
       () => console.log('done')
