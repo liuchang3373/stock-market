@@ -46,6 +46,10 @@ Email Services with Email API
 - **Email-svc**: https://github.com/liuchang3373/stock-market/tree/master/email-svc/src/main/java/fullstack/stockmarket/email
 - **Email-api**: https://github.com/liuchang3373/stock-market/tree/master/email-api/src/main/java/fullstack/stockmarket/email
 ------------
+ Common-lib is used by each services as a jar file
+ 
+- **Common-lib**: https://github.com/liuchang3373/stock-market/tree/master/common-lib/src/main/java/fullstack/stockmarket
+------------
 ###### *API Document and Unit Testing:*
 ###### Swagger Document:
 Company Swagger Document:  https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/Company_Swagger_UI.pdf
