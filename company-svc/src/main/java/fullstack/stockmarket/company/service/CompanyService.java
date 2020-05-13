@@ -171,7 +171,7 @@ public class CompanyService {
 		try {
 			exchangeListResponse = exchangeClient.getAllExchanges();
 		}catch (Exception ex) {
-            String errMsg = "unable to get admin";
+            String errMsg = "unable to get exchange";
             handleErrorAndThrowException(ex, errMsg);
         }
         if (!exchangeListResponse.isSuccess()) {
@@ -185,7 +185,7 @@ public class CompanyService {
 		try {
 			sectorListResponse = sectorClient.getAllSectors();
 		}catch (Exception ex) {
-            String errMsg = "unable to get admin";
+            String errMsg = "unable to get sector";
             handleErrorAndThrowException(ex, errMsg);
         }
         if (!sectorListResponse.isSuccess()) {

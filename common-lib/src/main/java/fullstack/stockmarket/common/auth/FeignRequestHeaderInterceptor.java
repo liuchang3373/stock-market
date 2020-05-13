@@ -7,7 +7,7 @@ import org.springframework.util.StringUtils;
 /**
  * Feign interceptor，for passing auth info to backend
  *
- * @author bobo
+ * 
  */
 public class FeignRequestHeaderInterceptor implements RequestInterceptor {
 

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
  *
  * A context holder class for holding the current userId and authz info
  *
- * @author bobo
  */
 public class AuthContext {
 

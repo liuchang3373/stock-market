@@ -38,8 +38,6 @@ public class EnvConfig {
                 .build();
         map.put(EnvConstant.ENV_TEST, envConfig);
 
-        // for aliyun k8s demo, enable debug and use http and staffjoy-uat.local
-        // in real world, disable debug and use http and staffjoy-uat.xyz in UAT environment
         envConfig = EnvConfig.builder().name(EnvConstant.ENV_UAT)
                 .debug(true)
                 .externalApex("stockmarket-uat.local")
@@ -50,7 +48,7 @@ public class EnvConfig {
 
 //        envConfig = EnvConfig.builder().name(EnvConstant.ENV_UAT)
 //                .debug(false)
-//                .externalApex("staffjoy-uat.xyz")
+//                .externalApex("stockmarket-uat.xyz")
 //                .internalApex(EnvConstant.ENV_UAT)
 //                .scheme("https")
 //                .build();
