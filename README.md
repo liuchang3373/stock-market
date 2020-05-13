@@ -8,13 +8,44 @@
 ###### Individual Micro-services:
 Each Services with an API client, this API client will be only used by internal services. API project will be packaged by maven to jar file and included in services
 
-- Company-svc with Company-api
-- Exchange-svc with Exchange-api
-- Sector-svc with Sector-api
-- StockPrice-svc with StockPrice-api
-- Email-svc with Email-api
-- User-svc with User-api
 
+------------
+Company Services with Company API 
+**DB**: Stock_company.company; Stock_company.ipo
+
+- **Company-svc**: https://github.com/liuchang3373/stock-market/tree/master/company-svc/src/main/java/fullstack/stockmarket/company
+- **Company-api**: https://github.com/liuchang3373/stock-market/tree/master/company-api/src/main/java/fullstack/stockmarket/company
+------------
+Exchange Services with Exchange API 
+**DB**: Stock_exchange.exchange
+
+- **Exchange-svc**: https://github.com/liuchang3373/stock-market/tree/master/exchange-svc/src/main/java/fullstack/stockmarket/exchange
+- **Exchange-api**: https://github.com/liuchang3373/stock-market/tree/master/exchange-api/src/main/java/fullstack/stockmarket/exchange
+------------
+Sector Services with Sector API 
+**DB**: Stock_sector.sector
+
+- **Sector-svc**: https://github.com/liuchang3373/stock-market/tree/master/sector-svc/src/main/java/fullstack/stockmarket/sector
+- **Sector-api**: https://github.com/liuchang3373/stock-market/tree/master/sector-api/src/main/java/fullstack/stockmarket/sector
+------------
+Stock Price Services with Stock Price API 
+**DB**: Stock_price.stock_price
+
+- **Stockprice-svc**: https://github.com/liuchang3373/stock-market/tree/master/stockprice-svc/src/main/java/fullstack/stockmarket/stockprice
+- **Stockprice-api**: https://github.com/liuchang3373/stock-market/tree/master/stockprice-api/src/main/java/fullstack/stockmarket/stockprice
+------------
+User Services with User API 
+**DB**: Stock_user.user_account
+
+- **User-svc**: https://github.com/liuchang3373/stock-market/tree/master/user-svc/src/main/java/fullstack/stockmarket/user
+- **User-api**: https://github.com/liuchang3373/stock-market/tree/master/user-api/src/main/java/fullstack/stockmarket/user
+------------
+Email Services with Email API 
+**DB**: No DBs
+
+- **Email-svc**: https://github.com/liuchang3373/stock-market/tree/master/email-svc/src/main/java/fullstack/stockmarket/email
+- **Email-api**: https://github.com/liuchang3373/stock-market/tree/master/email-api/src/main/java/fullstack/stockmarket/email
+------------
 ###### *API Document and Unit Testing:*
 ###### Swagger Document:
 Company Swagger Document:  https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/Company_Swagger_UI.pdf
