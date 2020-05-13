@@ -40,6 +40,16 @@ Email Swagger Document: https://github.com/liuchang3373/stock-market/blob/master
 
 Email API Doument: https://github.com/liuchang3373/stock-market/blob/master/document/swagger-document/Email_api_doc.json
 
+###### PostMan Testing result:
+https://www.postman.com/collections/cabafff74f9873920b50
+
+
+*****************************************************************************************************
+*****************************************************************************************************
+*****************************************************************************************************
+*****************************************************************************************************
+
+
 ### Milestone 1
 
 ###### *Design document:*  
