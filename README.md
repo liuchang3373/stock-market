@@ -6,7 +6,8 @@
 ![Micro-services structure](https://github.com/liuchang3373/stock-market/blob/master/document/micro-services-document/micro-services-structure.png "Micro-services structure")
 
 ###### Individual Micro-services:
-Each Services with an API client, this API client will be only used by internal services.
+Each Services with an API client, this API client will be only used by internal services. API project will be packaged by maven to jar file and included in services
+
 - Company-svc with Company-api
 - Exchange-svc with Exchange-api
 - Sector-svc with Sector-api
