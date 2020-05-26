@@ -1,5 +1,7 @@
 # stock-market
 
+### Milestone 4 (Submitted by Jack.Liu on 5/26/2020)
+
 ###### Zuul(API Gateway) And Eureka Service :
 
 - **Gateway-svc**: https://github.com/liuchang3373/stock-market/tree/master/gateway-svc/src/main/java/full/stack/stockmarket/gateway
