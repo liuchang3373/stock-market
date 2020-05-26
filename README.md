@@ -1,5 +1,38 @@
 # stock-market
 
+###### Zuul(API Gateway) And Eureka Service :
+
+- **Gateway-svc**: https://github.com/liuchang3373/stock-market/tree/master/gateway-svc/src/main/java/full/stack/stockmarket/gateway
+
+All the services are discovered and registered in Eureka: http://127.0.0.1:8761/
+![screenshots of Eureka instances](https://github.com/liuchang3373/stock-market/blob/master/document/Eureka_Zuul/all_the_instance.png "screenshots of Eureka instances")
+
+Zuul Gateway config:
+https://github.com/liuchang3373/stock-market/blob/master/gateway-svc/src/main/resources/application.yml
+
+Zuul portal for API (Examples):
+	http://localhost:8761/company-svc/company/listAllCompanies
+	
+	http://localhost:8761/sector-svc/sector/listAllSectors
+	
+	http://localhost:8761/exchange-svc/exchange/listAllExchanges
+	
+	http://localhost:8761/company-svc/company/getCompanyByCode?companyCode=002931
+	
+	http://localhost:8761/stockprice-svc/stockprice/listStockPrice?companyCode=500112
+	
+###### Individual Micro-services: See details as below on Milestone 3
+	
+###### Intergration with Angular Application:
+
+
+
+*****************************************************************************************************
+*****************************************************************************************************
+*****************************************************************************************************
+*****************************************************************************************************
+
+
 ### Milestone 3 (Submitted by Jack.Liu on 5/12/2020)
 
 ###### *Micro-services Structure:*  
