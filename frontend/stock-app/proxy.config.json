@@ -4,10 +4,5 @@
     "target":"http://localhost:8761/",
     "secure": false,
     "pathRewrite": {"^/api": ""}
-  },
-  "/api1": {
-    "target":"http://127.0.0.1:8805/",
-    "secure": false,
-    "pathRewrite": {"^/api1": ""}
   }
 }

@@ -2,13 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CompanyListRes, CompanyRes, CompanyComparisonRes } from '../model/companyModel';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class CompanyService  {
   constructor(public http: HttpClient) {}
-  private baseUrl = '/api';
+  private baseUrl = environment.apiUrl;
   private companyEndpoint = '/company-svc/company';
+
   private listAllCompanies = '/listAllCompanies'
+  private getCompanyByCode = '/getCompanyByCode'
+  private createOrUpdate = '/createOrUpdate'
+  private delete = '/delete'
   
   getCompanyListData(): Observable<CompanyListRes> {
     let url = this.baseUrl + this.companyEndpoint + this.listAllCompanies
@@ -18,8 +23,10 @@ export class CompanyService  {
   }
 
   getCompanyDetailsData(companyCode): Observable<CompanyRes> {
+    let url = this.baseUrl + this.companyEndpoint + this.getCompanyByCode
+    let param = '?companyCode=' + companyCode
     const data = this.http
-    .get<CompanyRes>('/api/company-svc/company/getCompanyByCode?companyCode=' + companyCode);
+    .get<CompanyRes>(url + param);
      return data;
   }
 
@@ -30,14 +37,17 @@ export class CompanyService  {
   }
 
   createOrUpdateExchange(body: any): Observable<CompanyRes> {
+    let url = this.baseUrl + this.companyEndpoint + this.createOrUpdate
     const data = this.http
-    .post<CompanyRes>('/api/company-svc/company/createOrUpdate', body)
+    .post<CompanyRes>(url, body)
      return data;
   }
 
   deleteExchange(id: number): Observable<CompanyRes> {
+    let url = this.baseUrl + this.companyEndpoint + this.delete
+    let param = '?companyId=' + id
     const data = this.http
-    .delete<CompanyRes>('/api/company-svc/company/delete?companyId=' + id)
+    .delete<CompanyRes>(url + param)
      return data;
   }
 

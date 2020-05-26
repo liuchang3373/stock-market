@@ -14,7 +14,7 @@ export class StockPriceService  {
     const data = this.http
     .get<StockPriceListRes>('/api/stockprice-svc/stockprice/listStockPrice?companyCode=500112').pipe(
       // Map through each item in res, and format the object
-      map((res) => res.StockPriceListDto.map(item => this.formatDates(item)))
+      map((res) => res.stockPriceListDto.map(item => this.formatDates(item)))
     );
      return data;
   }

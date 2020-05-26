@@ -10,9 +10,9 @@ export class StockPriceModel {
   }
 
 export class StockPriceListRes extends ResponseModel {
-  StockPriceListDto: StockPriceModel[]
-  }
+  stockPriceListDto: StockPriceModel[]
+}
 
   export class StockPriceRes extends ResponseModel {
-    StockPriceDto: StockPriceModel
+    stockPriceDto: StockPriceModel
   }
