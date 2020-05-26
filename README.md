@@ -13,6 +13,7 @@ Zuul Gateway config:
 https://github.com/liuchang3373/stock-market/blob/master/gateway-svc/src/main/resources/application.yml
 
 Zuul portal for API (Examples):
+
 	http://localhost:8761/company-svc/company/listAllCompanies
 	
 	http://localhost:8761/sector-svc/sector/listAllSectors
@@ -26,34 +27,48 @@ Zuul portal for API (Examples):
 ###### Individual Micro-services: See details as below on Milestone 3
 	
 ###### Intergration with Angular Application:
+
 proxy to solve cross site issue on local testing:
+
 https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/proxy.config.json
 
-JWT: https://github.com/liuchang3373/stock-market/blob/master/common-lib/src/main/java/fullstack/stockmarket/common/auth/Sessions.java
+JWT: 
+https://github.com/liuchang3373/stock-market/blob/master/common-lib/src/main/java/fullstack/stockmarket/common/auth/Sessions.java
 
-Authorization Service on Angular:https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/authorization.service.ts
+Authorization Service on Angular:
+https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/authorization.service.ts
 
-Authorization Guard on Angular: https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/authorization.service.ts 
+Authorization Guard on Angular: 
+https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/authorization.service.ts 
 
 One Example of Intergration:
-	Login page:
-		Login with valide Email and password:
+
+	        Login with valide Email and password:
+		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/1.png)
 		After login, JWT token has been stored on local storage:
+		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/2.png)
 		In the Edit companies page:
+		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/3.png)
 		Call API successful and get data as expect:
+		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/4.png)
 		Edit first company and update:
+		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/5.png)
 		Call API successful and return the message as expect:
+		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/6.png)
 		The result shows as expect:
+		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/7.png)
 		Create a new company:
+		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/8.png)
-		Call API successful 
+		Call API successfulL:
+		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/9.png)
 
 
