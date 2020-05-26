@@ -1,9 +1,19 @@
+import { ResponseModel } from './responseModel';
+
 export class IPOModel {
-    CompanyName: string;
-    Sector: string;
-    Stockexchange: string;
-    PricePerShare: number;
-    TotalNumberShares: number;
-    OpenDateTime: Date;
-    Remarks: string;
+    companyName: string;
+    sectorId: number;
+    exchangeId: number;
+    pricePerShare: number;
+    totalNumberShare: number;
+    openDateTime: Date;
+    remarks: string;
+}
+
+export class IPOListRes extends ResponseModel{
+    ipoListDto: IPOModel[];
+}
+
+export class IPORes extends ResponseModel{
+    ipoListDto: IPOModel;
 }

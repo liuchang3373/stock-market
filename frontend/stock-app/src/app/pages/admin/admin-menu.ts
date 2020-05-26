@@ -26,10 +26,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/admin/manage-exchange',
   },
   {
+    title: 'Manage Sector',
+    icon: 'repeat-outline',
+    link: '/admin/manage-sector',
+  },
+  {
     title: 'Update IPO',
     icon: 'pie-chart-outline',
     link: '/admin/manage-ipo',
   },
+  
   {
     title: 'Manage Users',
     icon: 'person-add-outline',

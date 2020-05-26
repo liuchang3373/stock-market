@@ -21,17 +21,15 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
   imports: [
     ThemeModule,
     NbCardModule,
-	NbInputModule,
+	  NbInputModule,
     NbUserModule,
     NbButtonModule,
     NbIconModule,
     NbTabsetModule,
     NbSelectModule,
     NbListModule,
-
     NbProgressBarModule,
-    LeafletModule,
-	NbTreeGridModule
+	  NbTreeGridModule
   ],
   declarations: [
     IpoDetailsComponent

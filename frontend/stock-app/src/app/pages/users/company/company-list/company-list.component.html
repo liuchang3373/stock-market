@@ -1,13 +1,13 @@
 <div class="control-section">
   <ejs-grid #grid [dataSource]='data'  allowSorting=true allowPaging=true allowSearching=true allowSelection=true allowFiltering=true [pageSettings]='pageSettings' [toolbar]='toolbar' (rowSelected)='rowSelected($event)'>
       <e-columns>
-          <e-column field='CompanyName' headerText='Company Name' width='120' textAlign='Center'></e-column>
-          <e-column field='CompanyCode' headerText='Company Code' width='120' textAlign='Center'></e-column>
-          <e-column field='Sector' headerText='Sector' width='120' textAlign='Center'></e-column>
-          <e-column field='StockExchange' headerText='Exchange' width='120' textAlign='Center'></e-column>
-          <e-column field='CEO' headerText='CEO' width='120' textAlign='Center'></e-column>
-          <e-column field='Turnover' headerText='Turnover' width='120' textAlign='Center'></e-column>
-          <e-column field='About' headerText='About' width='120' textAlign='Center'></e-column>
+          <e-column field='companyName' headerText='Company Name' width='120' textAlign='Center'></e-column>
+          <e-column field='companyCode' headerText='Company Code' width='120' textAlign='Center'></e-column>
+          <e-column field='sectorName' headerText='Sector' width='120' textAlign='Center'></e-column>
+          <e-column field='exchangeName' headerText='Exchange' width='120' textAlign='Center'></e-column>
+          <e-column field='ceoName' headerText='CEO' width='120' textAlign='Center'></e-column>
+          <e-column field='turnOver' headerText='Turnover' width='120' textAlign='Center'></e-column>
+          <e-column field='brief' headerText='Brief' width='120' textAlign='Center'></e-column>
       </e-columns>
   </ejs-grid>
 </div>

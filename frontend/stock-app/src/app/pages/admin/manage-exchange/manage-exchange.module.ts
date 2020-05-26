@@ -4,7 +4,7 @@ import {
   NbCardModule
 } from '@nebular/theme';
 import { ManageExchangeComponent } from './manage-exchange.component';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { GridModule  } from '@syncfusion/ej2-angular-grids';
 import { EditExchangeComponent } from './edit-exchange/edit-exchange.component';
 
 
@@ -12,7 +12,7 @@ import { EditExchangeComponent } from './edit-exchange/edit-exchange.component';
   imports: [
     NbCardModule,
     NbButtonModule,
-    Ng2SmartTableModule
+    GridModule
   ],
   declarations: [
     ManageExchangeComponent,EditExchangeComponent

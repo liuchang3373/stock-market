@@ -3,6 +3,7 @@ package fullstack.stockmarket.stockprice.dto;
 import java.sql.Date;
 import java.sql.Time;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,9 +21,18 @@ public class StockPriceDto {
 	
 	private String stockExchange;
 	
-	private float currentPrice;
+	private float current;
 	
-	private Date priceDate;
+	private float open;
 	
-	private Time priceTime;
+	private float close;
+	
+	private float high;
+	
+	private float low;
+	
+	private float volume;
+	
+	private Date date;
+	
 }

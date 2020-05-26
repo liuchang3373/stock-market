@@ -5,10 +5,19 @@ spring:
     password: 123456
   jpa:
     show-sql: true
-  
+  application:
+    name: user-svc
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 server:
-  port: 8080
+  port: 8805
 stock:
+  common:
+    sentry-dsn: ${SENTRY_DSN:https://80aaf4ae889b414f9fe72e3904cd5246@sentry.io/1380198}
+    deploy-env: ${DEPLOY:V2}
+  signing-secret: 123
   company-service-endpoint: http://localhost:8081
   user-service-endpoint: http://localhost:8080
 management:

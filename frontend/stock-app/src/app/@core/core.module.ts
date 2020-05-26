@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
+import { NbAuthModule, NbDummyAuthStrategy, NbPasswordAuthStrategy, NbAuthJWTToken } from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
 
@@ -12,16 +12,13 @@ import {
 
 
 
-import { CompanyListService } from './service/company-list.service';
-import { StockPriceImportService } from './service/stock-price-import.service';
-import { CompanyDetailsService } from './service/company-details.service';
-import { CompanyStockService } from './service/company-stock.service';
-import { SectorListService } from './service/sector-list.service';
-import { CompanyComparisonService } from './service/company-comparison.service';
+import { CompanyService } from './service/company.service';
+
 import { UserService } from './service/user.service';
-import { IPOListService } from './service/ipo-list.service';
-import { PeriodsService } from './service/Periods.service';
-import { ExchangeEditListService } from './service/exchange-edit-list.service';
+import { IPOService } from './service/ipo.service';
+import { ExchangeService } from './service/exchange.service';
+import { SectorService } from './service/sector.service';
+import { StockPriceService } from './service/stockPrice.service';
  
 
 const socialLinks = [
@@ -33,17 +30,12 @@ const socialLinks = [
 ];
 
 const DATA_SERVICES = [
-  { provide: CompanyListService, useClass: CompanyListService },
-  { provide: StockPriceImportService, useClass: StockPriceImportService },
-  { provide: CompanyDetailsService, useClass: CompanyDetailsService },
-  { provide: CompanyStockService, useClass: CompanyStockService },
-  { provide: SectorListService, useClass: SectorListService },
-  { provide: CompanyComparisonService, useClass: CompanyComparisonService },
+  { provide: CompanyService, useClass: CompanyService },
+  { provide: StockPriceService, useClass: StockPriceService },
   { provide: UserService, useClass: UserService },
-  { provide: IPOListService, useClass: IPOListService },
-  { provide: PeriodsService, useClass: PeriodsService },
-  { provide: ExchangeEditListService, useClass: ExchangeEditListService }
-  
+  { provide: IPOService, useClass: IPOService },
+  { provide: ExchangeService, useClass: ExchangeService },
+  { provide: SectorService, useClass: SectorService }
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
@@ -56,19 +48,53 @@ export class NbSimpleRoleProvider extends NbRoleProvider {
 export const NB_CORE_PROVIDERS = [
   ...DATA_SERVICES,
   ...NbAuthModule.forRoot({
-
     strategies: [
-      NbDummyAuthStrategy.setup({
-        name: 'email',
-        delay: 3000,
+      NbPasswordAuthStrategy.setup({
+        name: 'auth',
+        login: {
+          endpoint: '/user-svc/login',
+          redirect: {
+            success: '/auth/role-route',
+            failure: null, // stay on the same page
+          },
+          defaultErrors: ['Login/Email combination is not correct, please try again.'],
+          defaultMessages: ['You have been successfully logged in.']
+        },
+        register: {
+          endpoint: '/user-svc/signup',
+          redirect: {
+            success: '/auth/confirm',
+            failure: null, // stay on the same page
+          },
+          defaultErrors: ['Something went wrong, please try again.'],
+          defaultMessages: ['You have been successfully registered.'],
+        },
+        token: {
+          class: NbAuthJWTToken,
+          key: 'token',
+        },
+        refreshToken: {
+          endpoint: 'refresh_token',
+          method: 'get',
+        },
+        baseEndpoint: '/api',
+        
       }),
     ],
     forms: {
       login: {
-        socialLinks: socialLinks,
+        redirectDelay: 0,
+        showMessages: {
+          success: true,
+        },
+        strategy: 'auth',
       },
       register: {
-        socialLinks: socialLinks,
+        redirectDelay: 0,
+        showMessages: {
+          success: true,
+        },
+        strategy: 'auth',
       },
     },
   }).providers,

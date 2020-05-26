@@ -32,12 +32,24 @@ public class StockPrice {
 	private String stockExchange;
 	
 	@Column(name = "current_price")
-	private float currentPrice;
+	private float current;
+	
+	@Column(name = "open_price")
+	private float open;
+	
+	@Column(name = "close_price")
+	private float close;
+	
+	@Column(name = "high_price")
+	private float high;
+	
+	@Column(name = "low_price")
+	private float low;
+	
+	@Column(name = "volume")
+	private float volume;
 	
 	@Column(name = "price_date")
-	private Date priceDate;
-	
-	@Column(name = "price_time")
-	private Time priceTime;
+	private Date date;
 	
 }

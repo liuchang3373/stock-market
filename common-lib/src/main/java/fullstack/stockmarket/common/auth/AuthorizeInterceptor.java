@@ -14,16 +14,15 @@ public class AuthorizeInterceptor extends HandlerInterceptorAdapter {
         if (!(handler instanceof HandlerMethod)) {
             return true;
         }
-
         HandlerMethod handlerMethod = (HandlerMethod) handler;
         Authorize authorize = handlerMethod.getMethod().getAnnotation(Authorize.class);
         if (authorize == null) {
             return true; // no need to authorize
         }
-
+        
         String[] allowedHeaders = authorize.value();
         String authzHeader = request.getHeader(AuthConstant.AUTHORIZATION_HEADER);
-
+        
         if (StringUtils.isEmpty(authzHeader)) {
             throw new PermissionDeniedException(AuthConstant.ERROR_MSG_MISSING_AUTH_HEADER);
         }

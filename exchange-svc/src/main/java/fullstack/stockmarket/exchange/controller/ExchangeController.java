@@ -23,6 +23,7 @@ import fullstack.stockmarket.exchange.res.ExchangeNameResponse;
 import fullstack.stockmarket.exchange.res.ExchangeResponse;
 import fullstack.stockmarket.exchange.service.ExchangeService;
 
+
 @RestController
 @RequestMapping("/exchange")
 public class ExchangeController {
@@ -66,5 +67,17 @@ public class ExchangeController {
     public BaseResponse deleteExchange(@RequestParam int exchangeId) {
 		exchangeService.deleteExchange(exchangeId);
         return BaseResponse.builder().build();
+    }
+	
+	@PostMapping(path= "/createOrUpdate")
+    public ExchangeResponse createOrUpdateExchange(@RequestBody ExchangeDto exchangeDto) {
+		Exchange exsitExchange = exchangeService.getExchangeById(exchangeDto.getId());
+		if(exsitExchange != null) {
+			 ExchangeDto updatedExchangeDto = exchangeService.updateExchange(exchangeDto);
+			 return new ExchangeResponse(updatedExchangeDto);
+		}else {
+			ExchangeDto newExchangeDto = exchangeService.createExchange(exchangeDto);
+			 return new ExchangeResponse(newExchangeDto);
+		}
     }
 }

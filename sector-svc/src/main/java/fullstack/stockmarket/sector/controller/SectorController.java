@@ -67,4 +67,16 @@ public class SectorController {
 		sectorService.deleteSector(sectorId);
         return BaseResponse.builder().build();
     }
+	
+	@PostMapping(path= "/createOrUpdate")
+    public SectorResponse createOrUpdateSector(@RequestBody SectorDto sectorDto) {
+		Sector exsitSector = sectorService.getSectorById(sectorDto.getId());
+		if(exsitSector != null) {
+			 SectorDto updatedSectorDto = sectorService.updateSector(sectorDto);
+			 return new SectorResponse(updatedSectorDto);
+		}else {
+			SectorDto newSectorDto = sectorService.createSector(sectorDto);
+			 return new SectorResponse(newSectorDto);
+		}
+    }
 }

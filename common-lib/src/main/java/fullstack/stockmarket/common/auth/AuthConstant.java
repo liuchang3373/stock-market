@@ -4,10 +4,10 @@ public class AuthConstant {
 
     public static final String COOKIE_NAME = "stock-zuul";
     // header set for internal user id
-    public static final String CURRENT_USER_HEADER = "zuul-current-user-id";
+    public static final String CURRENT_USER_HEADER = "stock-current-user-id";
     // AUTHORIZATION_HEADER is the http request header
     // key used for accessing the internal authorization.
-    public static final String AUTHORIZATION_HEADER = "Authorization";
+    public static final String AUTHORIZATION_HEADER = "Verified-Token";
     // AUTHORIZATION_ANONYMOUS_WEB is set as the Authorization header to denote that
     // a request is being made bu an unauthenticated web user
     public static final String AUTHORIZATION_ANONYMOUS_WEB = "zuul-anonymous";
@@ -21,7 +21,7 @@ public class AuthConstant {
     // a request is being made by the sector service
     public static final String AUTHORIZATION_SECTOR_SERVICE = "sector-service";
     // AUTHORIZATION_SUPPORT_USER is set as the Authorization header to denote that
-    public static final String AUTHORIZATION_SUPPORT_USER = "zuul-support";
+    public static final String AUTHORIZATION_ADMIN_USER = "stock-admin";
     // AUTHORIZATION_SUPERPOWERS_SERVICE is set as the Authorization header to
     // denote that a request is being made by the dev-only superpowers service
     public static final String AUTHORIZATION_SUPERPOWERS_SERVICE = "superpowers-service";
@@ -33,7 +33,7 @@ public class AuthConstant {
     public static final String AUTHORIZATION_STOCKPRICE_SERVICE = "stockprice-service";
     // AUTHORIZATION_AUTHENTICATED_USER is set as the Authorization header to denote that
     // a request is being made by an authenticated we6b user
-    public static final String AUTHORIZATION_AUTHENTICATED_USER = "zuul-authenticated";
+    public static final String AUTHORIZATION_AUTHENTICATED_USER = "stock-authenticated";
     // AUTHORIZATION_EMAIL_SERVICE is set as the Authorization header to denote that
     // a request is being made by the email service
     public static final String AUTHORIZATION_EMAIL_SERVICE = "email-service";

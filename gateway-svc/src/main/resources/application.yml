@@ -1,0 +1,30 @@
+server:
+  port: 8761 
+eureka:
+  client:
+    registerWithEureka: false   
+    fetchRegistry: true 
+zuul: 
+  routes:
+    company-svc: 
+      path: /company-svc/** 
+      serviceId: company-svc 
+    sector-svc: 
+      path: /sector-svc/** 
+      serviceId: sector-svc
+    exchange-svc: 
+      path: /exchange-svc/** 
+      serviceId: exchange-svc
+    stockprice-svc: 
+      path: /stockprice-svc/** 
+      serviceId: stockprice-svc
+    user-svc: 
+      custom-sensitive-headers: true
+      path: /user-svc/** 
+      serviceId: user-svc
+    email-svc: 
+      custom-sensitive-headers: true
+      path: /email-svc/** 
+      serviceId: email-svc
+stock:
+  signing-secret: 123

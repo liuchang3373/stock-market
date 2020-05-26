@@ -1,3 +1,21 @@
-<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
-</ng2-smart-table>
+<div id="action-description">
+    <p>Edit User information</p>
+  </div>
+  <div class="control-section">
+    <ejs-grid #grid id='userTable' [dataSource]='data'  allowPaging=true 
+    allowSearching=true allowSelection=true [pageSettings]='pageSettings' 
+    [toolbar]='toolbar' (rowSelected)='rowSelected($event)' [editSettings]='editSettings' (actionBegin)='actionBegin($event)' (actionComplete)='actionComplete($event)'>
+        <e-columns>
+            <e-column field='id' headerText='ID' width='140' textAlign='Center' isPrimaryKey='true' [validationRules]='userIdRules'></e-column>
+            <e-column field='email' headerText='Email' width='100' textAlign='Center' [validationRules]='emailRules'></e-column>
+            <e-column field='userName' headerText='User Name' width='100' textAlign='Center' [validationRules]='userNameRules'></e-column>
+            <e-column field='phoneNumber' headerText='Phone Number' width='100' textAlign='Center' [validationRules]='phoneNumberRules'></e-column>
+            <e-column field='confirmedAndActive' headerText='Active' width='100' textAlign='Center' [validationRules]='confirmedAndActiveRules'></e-column>
+            <e-column field='passwordHash' headerText='Password' width='100' textAlign='Center' [validationRules]='passwordHashRules'></e-column>
+            <e-column field='accessLevel' headerText='Access Level' width='100' textAlign='Center' [validationRules]='accessLevelRules'></e-column>
+            <e-column field='photoUrl' headerText='PhotoUrl' width='100' textAlign='Center' [validationRules]='photoUrlRules'></e-column>
+            
+        </e-columns>
+    </ejs-grid>
+  </div>
 

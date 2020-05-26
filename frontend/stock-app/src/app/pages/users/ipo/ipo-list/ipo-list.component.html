@@ -6,13 +6,13 @@
   allowSearching=true allowSelection=true allowFiltering=true [pageSettings]='pageSettings' 
   [toolbar]='toolbar' (rowSelected)='rowSelected($event)' (dataBound)='dataBound()' (created)='created()' (load)='load()'>
       <e-columns>
-          <e-column field='CompanyName' headerText='Company Name' width='140' textAlign='Center'></e-column>
-          <e-column field='Sector' headerText='Sector' width='100' textAlign='Center'></e-column>
-          <e-column field='Stockexchange' headerText='Exchange' width='120' textAlign='Center'></e-column>
-          <e-column field='PricePerShare' headerText='Price Per Share' width='140' textAlign='Center'></e-column>
-          <e-column field='TotalNumberShares' headerText='Total Number of Shares' width='160' textAlign='Center'></e-column>
-          <e-column field='OpenDateTime' headerText='Open Date' width='120' textAlign='Center'></e-column>
-          <e-column field='Remarks' headerText='Remarks' width='100' textAlign='Center'></e-column>
+          <e-column field='companyName' headerText='Company Name' width='140' textAlign='Center'></e-column>
+          <e-column field='sectorId' headerText='Sector' width='100' textAlign='Center'></e-column>
+          <e-column field='exchangeId' headerText='Exchange' width='120' textAlign='Center'></e-column>
+          <e-column field='pricePerShare' headerText='Price Per Share' width='140' textAlign='Center'></e-column>
+          <e-column field='totalNumberShare' headerText='Total Number of Shares' width='160' textAlign='Center'></e-column>
+          <e-column field='openDateTime' headerText='Open Date' width='120' textAlign='Center'></e-column>
+          <e-column field='remarks' headerText='Remarks' width='100' textAlign='Center'></e-column>
       </e-columns>
   </ejs-grid>
   <ejs-dialog #alertDialog [buttons]='alertDlgButtons' [visible]='hidden' [header]='alertHeader' [animationSettings]='animationSettings' [content]='alertContent' [showCloseIcon]='showCloseIcon' [target]='target' [width]='alertWidth'>

@@ -1,7 +1,17 @@
+import { ResponseModel } from './responseModel';
+
 export class ExchangeModel {
-  ID: number
-  StockExchange: string
-  Brief: string
-  ContactAddress: string
-  Remarks: string;
+  id: number
+  exchangeName: string
+  contactAddress: string
+  remarks: string
+  brief: string
+}
+
+export class ExchangeListRes extends ResponseModel {
+  exchangeListDto: ExchangeModel[]
+}
+
+export class ExchangeRes extends ResponseModel {
+  exchangeDto: ExchangeModel
 }

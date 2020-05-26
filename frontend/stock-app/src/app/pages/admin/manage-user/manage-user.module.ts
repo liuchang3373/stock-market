@@ -4,7 +4,7 @@ import {
   NbCardModule
 } from '@nebular/theme';
 import { ManageUserComponent } from './manage-user.component';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { GridModule  } from '@syncfusion/ej2-angular-grids';
 import { EditUserComponent } from './edit-user/edit-user.component';
 
 
@@ -12,7 +12,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
   imports: [
     NbCardModule,
     NbButtonModule,
-    Ng2SmartTableModule
+    GridModule
   ],
   declarations: [
     ManageUserComponent, EditUserComponent

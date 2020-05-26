@@ -1,8 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
-import { CompanyComparisonService } from '../../../@core/service/company-comparison.service';
-import { CompanyDetailsService } from '../../../@core/service/company-details.service';
-import { CompanyModel } from '../../../@core/model/companyModel';
+import { CompanyService } from '../../../@core/service/company.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CompanyRes, CompanyDto } from '../../../@core/model/companyModel';
 
 
 @Component({
@@ -11,14 +11,18 @@ import { CompanyModel } from '../../../@core/model/companyModel';
   encapsulation: ViewEncapsulation.None
 })
 export class ComparisonChartsComponent {
-  
-  constructor(private service: CompanyDetailsService){};
-  public companyDetailsData: CompanyModel;
+  public companyCode: string;
+  constructor(private service: CompanyService, private activateInfo:ActivatedRoute,
+    private router:Router){};
+  public companyDetailsData: CompanyDto;
   ngOnInit(): void {
-    this.service.getCompanyDetailsData()
+    this.activateInfo.queryParams.subscribe(queryParams => {
+      this.companyCode = queryParams.companyCode;
+      });
+    this.service.getCompanyDetailsData(this.companyCode)
     .subscribe(
-      (data: CompanyModel)=> { 
-        this.companyDetailsData = data; 
+      (data: CompanyRes)=> { 
+        this.companyDetailsData = data.companyDto; 
         //console.log("service: " + JSON.stringify(data));
       },
       err => console.error(err),

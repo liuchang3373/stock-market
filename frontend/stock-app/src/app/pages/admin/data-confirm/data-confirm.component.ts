@@ -4,7 +4,7 @@ import { UploadResultComponent } from './upload-result/upload-result.component';
 import { PageSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { ToolbarItems, GridComponent} from '@syncfusion/ej2-angular-grids';
 import { PageService, SortService, FilterService, SearchService, ToolbarService  } from '@syncfusion/ej2-angular-grids';
-import { StockPriceImportService } from '../../../@core/service/stock-price-import.service';
+import { StockPriceService } from '../../../@core/service/stockprice.service';
 @Component({
   selector: 'fsd-data-confirm',
   templateUrl: 'data-confirm.component.html',
@@ -28,7 +28,7 @@ export class DataConfirmComponent implements OnInit{
       this.toolbar = ['Search'];
     }
 
-  constructor(private dialogService: NbDialogService, private service: StockPriceImportService) {}
+  constructor(private dialogService: NbDialogService, private service: StockPriceService) {}
   
   open() {
     this.dialogService.open(UploadResultComponent, {

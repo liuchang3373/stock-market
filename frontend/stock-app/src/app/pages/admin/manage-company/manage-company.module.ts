@@ -5,13 +5,13 @@ import {
 } from '@nebular/theme';
 import { ManageCompanyComponent } from './manage-company.component';
 import { EditCompanyComponent } from './edit-company/edit-company.component';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { GridModule  } from '@syncfusion/ej2-angular-grids';
 
 @NgModule({
   imports: [
     NbCardModule,
     NbButtonModule,
-    Ng2SmartTableModule
+    GridModule
   ],
   declarations: [
     ManageCompanyComponent,

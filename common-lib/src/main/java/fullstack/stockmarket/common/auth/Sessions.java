@@ -15,8 +15,9 @@ public class Sessions {
     public static final long SHORT_SESSION = TimeUnit.HOURS.toMillis(12);
     public static final long LONG_SESSION = TimeUnit.HOURS.toMillis(30 * 24);
 
-    public static void loginUser(String userId,
-                                 boolean support,
+    public static String loginUser(int userId,
+                                 int accessLevel,
+                                 int confirmedAndActive,
                                  boolean rememberMe,
                                  String signingSecret,
                                  String externalApex,
@@ -32,14 +33,14 @@ public class Sessions {
         }
         maxAge = (int) (duration / 1000);
 
-        String token = Sign.generateSessionToken(userId, signingSecret, support, duration);
-
+        String token = Sign.generateSessionToken(userId, accessLevel, confirmedAndActive, signingSecret, duration);
         Cookie cookie = new Cookie(AuthConstant.COOKIE_NAME, token);
         cookie.setPath("/");
-        cookie.setDomain(externalApex);
+        cookie.setDomain("localhost");
         cookie.setMaxAge(maxAge);
         cookie.setHttpOnly(true);
         response.addCookie(cookie);
+        return token;
     }
 
     public static String getToken(HttpServletRequest request) {

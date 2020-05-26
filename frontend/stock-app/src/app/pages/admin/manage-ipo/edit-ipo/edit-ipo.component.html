@@ -1,2 +1,20 @@
-<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
-</ng2-smart-table>
+<div id="action-description">
+    <p>Edit IPO information</p>
+  </div>
+  <div class="control-section">
+    <ejs-grid #grid id='exchangeTable' [dataSource]='data'  allowPaging=true 
+    allowSearching=true allowSelection=true [pageSettings]='pageSettings' 
+    [toolbar]='toolbar' (rowSelected)='rowSelected($event)' [editSettings]='editSettings' (actionBegin)='actionBegin($event)' (actionComplete)='actionComplete($event)'>
+        <e-columns>
+            <e-column field='id' headerText='ID' width='140' textAlign='Center' isPrimaryKey='true' [validationRules]='exchangeIdRules'></e-column>
+            <e-column field='companyName' headerText='Company Name' width='100' textAlign='Center' [validationRules]='companyNameRules'></e-column>
+            <e-column field='pricePerShare' headerText='Price Per Share' width='100' textAlign='Center' [validationRules]='pricePerShareRules'></e-column>
+            <e-column field='totalNumberShare' headerText='Total Number Share' width='100' textAlign='Center' [validationRules]='totalNumberShareRules'></e-column>
+            <e-column field='openDateTime' headerText='Open Date Time' width='120' textAlign='Center' [validationRules]='openDateTimeRules' ></e-column>
+            <e-column field='remarks' headerText='Remarks' width='100' textAlign='Center' [validationRules]='remarksRules'></e-column>
+            <e-column field='sectorId' headerText='Sector Id' width='100' textAlign='Center' [validationRules]='sectorIdRules'></e-column>
+            <e-column field='exchangeId' headerText='Exchange Id' width='120' textAlign='Center' [validationRules]='exchangeIdRules' ></e-column>
+        </e-columns>
+    </ejs-grid>
+  </div>
+

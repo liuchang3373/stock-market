@@ -3,7 +3,7 @@ import { PageSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { ToolbarItems, GridComponent, RowSelectEventArgs } from '@syncfusion/ej2-angular-grids';
 import { PageService, SortService, FilterService, GroupService, SearchService, ToolbarService  } from '@syncfusion/ej2-angular-grids';
 import { Router ,NavigationExtras} from '@angular/router';
-import { IPOListService } from '../../../../@core/service/ipo-list.service';
+import { IPOService } from '../../../../@core/service/ipo.service';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 
 @Component({
@@ -62,7 +62,7 @@ export class IPOListComponent {
       }
     }
 
-  constructor(public router:Router, private service: IPOListService) {}
+  constructor(public router:Router, private service: IPOService) {}
   
   rowSelected(args: RowSelectEventArgs) {
     const selectedrecords: object[] = this.grid.getSelectedRecords();  // Get the selected records.

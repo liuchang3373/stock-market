@@ -8,8 +8,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import feign.RequestInterceptor;
+import fullstack.stockmarket.common.auth.AuthorizeInterceptor;
+import fullstack.stockmarket.common.auth.FeignRequestHeaderInterceptor;
 import fullstack.stockmarket.common.env.EnvConfig;
 import io.sentry.Sentry;
 import io.sentry.SentryClient;
@@ -45,6 +49,16 @@ public class StockConfig implements WebMvcConfigurer{
         sentryClient.addTag("service", appName);
 
         return sentryClient;
+    }
+    
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new AuthorizeInterceptor());
+    }
+
+    @Bean
+    public RequestInterceptor feignRequestInterceptor() {
+        return new FeignRequestHeaderInterceptor();
     }
     
     @PreDestroy

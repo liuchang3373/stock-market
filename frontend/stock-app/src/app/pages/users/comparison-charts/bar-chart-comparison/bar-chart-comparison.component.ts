@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
-import { CompanyComparisonService } from '../../../../@core/service/company-comparison.service';
+import { CompanyService } from '../../../../@core/service/company.service';
 
 @Component({
   selector: 'fsd-bar-chart-comparison',
@@ -34,7 +34,7 @@ getData() {
   );
 }
 
-constructor(private service: CompanyComparisonService) {
+constructor(private service: CompanyService) {
     this.getData();
 }
 

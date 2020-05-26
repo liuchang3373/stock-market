@@ -5,9 +5,14 @@ spring:
     password: 123456
   jpa:
     show-sql: true
-  
+  application:
+    name: stockprice-svc
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 server:
-  port: 8084
+  port: 8804
 stock:
   company-service-endpoint: http://localhost:8081
   user-service-endpoint: http://localhost:8080

@@ -1,10 +1,20 @@
+import { ResponseModel } from './responseModel';
+
 export class User {
-  ID: number;
-  Name: string;
-  Password: string;
-  UserType: number;
-  Email: string
-  Picture: string;
-  MobileNumber: string;
-  Comfirmed: number;
+  id: number;
+  userName: string;
+  passwordHash: string;
+  accessLevel: number;
+  email: string
+  photoUrl: string;
+  phoneNumber: string;
+  confirmedAndActive: number;
+}
+
+export class UserRes extends ResponseModel {
+  userDto: User
+}
+
+export class UserListRes extends ResponseModel {
+  userListDto: User[]
 }

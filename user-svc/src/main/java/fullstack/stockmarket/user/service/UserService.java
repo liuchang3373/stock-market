@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -29,6 +30,8 @@ public class UserService {
 	@PersistenceContext
     EntityManager entityManager;
 	
+	
+	
 	public List<UserDto> getAllusers() {
 		List<User> users = userRepo.findAll();
 		List<UserDto> usersDto = users.stream().map(user -> convertToDto(user)).collect(toList());
@@ -42,10 +45,15 @@ public class UserService {
 	
 	public UserDto getUserByEmail(String email) {
 		User user = userRepo.findByEmail(email);
-		return this.convertToDto(user);
+		if(user != null) {
+			return this.convertToDto(user);
+		}else {
+			return null;
+		}
+		
 	}
 	
-	public UserDto create(String name, String email, String phoneNumber) {
+	public UserDto create(String name, String email, String phoneNumber, String password) {
 		 if (StringUtils.hasText(email)) {
 	            // Check to see if account exists
 	            User foundUser = userRepo.findByEmail(email);
@@ -71,9 +79,11 @@ public class UserService {
         }
         
         User user = User.builder()
-                .email(email).userName(name).phoneNumber(phoneNumber)
+                .email(email).userName(name).phoneNumber(phoneNumber).passwordHash(password)
                 .build();
         user.setPhotoUrl("test/photoUrl/" + email);
+        user.setConfirmedAndActive(false);
+        user.setAccessLevel((short) 2);
         try {
         	userRepo.save(user);
         } catch (Exception ex) {
@@ -146,6 +156,34 @@ public class UserService {
         } catch (Exception ex) {
             String errMsg = "could not delete the admin";
         }
+    }
+	
+	public UserDto verifyPassword(String email, String password) {
+        User accountSecret = userRepo.findByEmail(email);
+        if (accountSecret == null) {
+            throw new ServiceException(ResultCode.NOT_FOUND, "account with specified email not found");
+        }
+
+        /*if (!accountSecret.isConfirmedAndActive()) {
+            throw new ServiceException(ResultCode.REQ_REJECT, "This user has not confirmed their account");
+        }*/
+
+        if (StringUtils.isEmpty(accountSecret.getPasswordHash())) {
+            throw new ServiceException(ResultCode.REQ_REJECT, "This user has not set up their password");
+        }
+
+        if (!password.equals(accountSecret.getPasswordHash())) {
+            throw new ServiceException(ResultCode.UN_AUTHORIZED, "Incorrect password");
+        }
+
+        /*User account = accountRepo.findUserById(accountSecret.getId());
+        if (account == null) {
+            throw new ServiceException(String.format("User with id %s not found", accountSecret.getId()));
+        }*/
+
+        // You shall pass
+        UserDto accountDto = this.convertToDto(accountSecret);
+        return accountDto;
     }
 	
 	private UserDto convertToDto(User user) {

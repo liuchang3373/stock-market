@@ -7,21 +7,21 @@
           <div class="col-md-4">
             <nb-card status="primary">
               <nb-card-header>
-                Company code: {{companyDetailsData.CompanyCode}}
+                Company code: {{companyDetailsData.companyCode}}
               </nb-card-header>
             </nb-card>
           </div>
           <div class="col-md-4">
             <nb-card status="danger">
               <nb-card-header>
-                Exchange: {{companyDetailsData.StockExchange}}
+                Exchange: {{companyDetailsData?.exchangeName}}
               </nb-card-header>
             </nb-card>
           </div>
           <div class="col-md-4">
             <nb-card status="info">
               <nb-card-header>
-                Sector: {{companyDetailsData.Sector}}
+                Sector: {{companyDetailsData?.sectorName}}
               </nb-card-header>
             </nb-card>
           </div>
@@ -35,7 +35,11 @@
           Stock Price Chart
         </nb-accordion-item-header>
         <nb-accordion-item-body>
-          <fsd-stock-chart ></fsd-stock-chart>
+          <ejs-stockchart id="chart-container" [primaryXAxis]='primaryXAxis'[primaryYAxis]='primaryYAxis' [title]='title'>
+            <e-stockchart-series-collection>
+                <e-stockchart-series [dataSource]='stockchartData' type='Candle' xName='date' High='high' Low='low' Open='open' Close ='close' Name='Apple'></e-stockchart-series>
+            </e-stockchart-series-collection>
+          </ejs-stockchart>
         </nb-accordion-item-body>
       </nb-accordion-item>
 
@@ -44,7 +48,7 @@
           Turnover
         </nb-accordion-item-header>
         <nb-accordion-item-body>
-          {{companyDetailsData.Turnover}}
+          {{companyDetailsData?.turnOver}}
         </nb-accordion-item-body>
       </nb-accordion-item>
 
@@ -53,7 +57,7 @@
           CEO
         </nb-accordion-item-header>
         <nb-accordion-item-body>
-          {{companyDetailsData.CEO}}
+          {{companyDetailsData?.ceoName}}
         </nb-accordion-item-body>
       </nb-accordion-item>
       
@@ -62,7 +66,7 @@
           About 
         </nb-accordion-item-header>
         <nb-accordion-item-body>
-          {{companyDetailsData.About}}
+          {{companyDetailsData?.brief}}
         </nb-accordion-item-body>
       </nb-accordion-item>
     </nb-accordion>

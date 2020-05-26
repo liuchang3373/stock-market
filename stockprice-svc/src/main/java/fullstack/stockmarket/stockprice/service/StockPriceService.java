@@ -76,17 +76,14 @@ public class StockPriceService {
             	existingStockPrice.setStockExchange(newStockPrice.getStockExchange());
         }
         
-        if (newStockPrice.getCurrentPrice() !=0 && newStockPrice.getCurrentPrice() != existingStockPrice.getCurrentPrice()) {
-        	existingStockPrice.setCurrentPrice(newStockPrice.getCurrentPrice());
+        if (newStockPrice.getCurrent() !=0 && newStockPrice.getCurrent() != existingStockPrice.getCurrent()) {
+        	existingStockPrice.setCurrent(newStockPrice.getCurrent());
         }
         
-        if (newStockPrice.getPriceDate() !=null && newStockPrice.getPriceDate().equals(existingStockPrice.getPriceDate())) {
-        	existingStockPrice.setPriceDate(newStockPrice.getPriceDate());
+        if (newStockPrice.getDate() !=null && newStockPrice.getDate().equals(existingStockPrice.getDate())) {
+        	existingStockPrice.setDate(newStockPrice.getDate());
         }
         
-        if (newStockPrice.getPriceTime() !=null && newStockPrice.getPriceTime().equals(existingStockPrice.getPriceTime())) {
-        	existingStockPrice.setPriceTime(newStockPrice.getPriceTime());
-        }
         
         StockPrice updatedStockPrice = null;
         try {
@@ -144,15 +141,26 @@ public class StockPriceService {
 	        }
 	        if (row.getCell(2) != null){
 	            //row.getCell(2).setCellType(CellType.NUMERIC);
-	            stockPrice.setCurrentPrice((float) row.getCell(2).getNumericCellValue());
+	            stockPrice.setCurrent((float) row.getCell(2).getNumericCellValue());
 	        }
 	        if (row.getCell(3) != null){
-	        	row.getCell(3).setCellType(CellType.STRING);
-	        	stockPrice.setPriceDate(this.strToDate(row.getCell(3).getStringCellValue()));
+	            stockPrice.setOpen((float) row.getCell(3).getNumericCellValue());
 	        }
 	        if (row.getCell(4) != null){
-	        	row.getCell(4).setCellType(CellType.STRING);
-	        	stockPrice.setPriceTime(this.strToTime(row.getCell(4).getStringCellValue()));
+	            stockPrice.setClose((float) row.getCell(4).getNumericCellValue());
+	        }
+	        if (row.getCell(5) != null){
+	            stockPrice.setHigh((float) row.getCell(5).getNumericCellValue());
+	        }
+	        if (row.getCell(6) != null){
+	            stockPrice.setLow((float) row.getCell(6).getNumericCellValue());
+	        }
+	        if (row.getCell(7) != null){
+	            stockPrice.setVolume((float) row.getCell(7).getNumericCellValue());
+	        }
+	        if (row.getCell(8) != null){
+	        	row.getCell(8).setCellType(CellType.STRING);
+	        	stockPrice.setDate(this.strToDate(row.getCell(8).getStringCellValue()));
 	        }
 	        
 	        stockPriceList.add(stockPrice);

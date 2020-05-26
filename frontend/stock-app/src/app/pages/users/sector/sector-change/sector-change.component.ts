@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { SectorChangeModel } from '../../../../@core/model/sectorModel';
-import { SectorListService } from '../../../../@core/service/sector-list.service';
+import { SectorService } from '../../../../@core/service/sector.service';
 
 @Component({
   selector: 'fsd-sector-change',
@@ -9,7 +9,7 @@ import { SectorListService } from '../../../../@core/service/sector-list.service
 })
 export class SectorChangeComponent {
   sectorChangeData: SectorChangeModel[] = [];
-  constructor(private service: SectorListService) {
+  constructor(private service: SectorService) {
     this.service.getSectorChangeData()
     .subscribe(data => {
       console.log("sector: " + JSON.stringify(data))

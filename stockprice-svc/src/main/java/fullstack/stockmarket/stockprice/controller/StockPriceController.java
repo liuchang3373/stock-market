@@ -3,6 +3,7 @@ package fullstack.stockmarket.stockprice.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 import fullstack.stockmarket.common.api.BaseResponse;
 import fullstack.stockmarket.stockprice.dto.StockPriceDto;
@@ -31,6 +35,7 @@ public class StockPriceController {
 	public StockPriceListResponse getStockPriceByCompanyCode(@RequestParam String companyCode) {
 		List<StockPriceDto> StockPriceListDto = stockPriceService.getStockPriceByCompanyCode(companyCode);
 		StockPriceListResponse StockPriceListResponse = new StockPriceListResponse(StockPriceListDto);
+		
 		return StockPriceListResponse;
 	}
 	

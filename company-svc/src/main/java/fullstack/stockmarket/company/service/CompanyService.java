@@ -158,6 +158,11 @@ public class CompanyService {
 		return this.convertToDto(company);
 	}
 	
+	public Company getCompanyByCompanyId(int id) {
+		Company company = companyRepo.findById(id);
+		return company;
+	}
+	
 	public void deleteCompany(int id) {
         try {
         	companyRepo.deleteById(id);;

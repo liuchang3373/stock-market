@@ -20,6 +20,8 @@ public class Sign {
     public static final String CLAIM_EMAIL = "email";
     public static final String CLAIM_USER_ID = "userId";
     public static final String CLAIM_SUPPORT = "support";
+    public static final String ACCESS_LEVEL = "accessLevel";
+    public static final String CONFIRMED_AND_ACTIVE = "confirmedAndActive";
 
     private static Map<String, JWTVerifier> verifierMap = new HashMap<>();
     private static Map<String, Algorithm> algorithmMap = new HashMap<>();
@@ -73,14 +75,14 @@ public class Sign {
         return jwt;
     }
 
-    public static String generateSessionToken(String userId, String signingToken, boolean support, long duration) {
+    public static String generateSessionToken(int userId, int accessLevel, int confirmedAndActive, String signingToken, long duration) {
         if (StringUtils.isEmpty(signingToken)) {
             throw new ServiceException("No signing token present");
         }
         Algorithm algorithm = getAlgorithm(signingToken);
         String token = JWT.create()
-                .withClaim(CLAIM_USER_ID, userId)
-                .withClaim(CLAIM_SUPPORT, support)
+                .withClaim(CLAIM_USER_ID, userId).withClaim(ACCESS_LEVEL, accessLevel)
+                .withClaim(CONFIRMED_AND_ACTIVE, confirmedAndActive)
                 .withExpiresAt(new Date(System.currentTimeMillis() + duration))
                 .sign(algorithm);
         return token;

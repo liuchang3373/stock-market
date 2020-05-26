@@ -4,7 +4,7 @@ import {
   NbCardModule
 } from '@nebular/theme';
 import { ManageIpoComponent } from './manage-ipo.component';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { GridModule  } from '@syncfusion/ej2-angular-grids';
 import { EditIPOComponent } from './edit-ipo/edit-ipo.component';
 
 
@@ -12,7 +12,7 @@ import { EditIPOComponent } from './edit-ipo/edit-ipo.component';
   imports: [
     NbCardModule,
     NbButtonModule,
-    Ng2SmartTableModule
+    GridModule
   ],
   declarations: [
     ManageIpoComponent, EditIPOComponent

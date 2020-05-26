@@ -4,15 +4,14 @@ import {
   NbCardModule
 } from '@nebular/theme';
 import { ManageSectorComponent } from './manage-sector.component';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { EditSectorComponent } from './edit-sector/edit-sector.component';
-
+import { GridModule  } from '@syncfusion/ej2-angular-grids';
 
 @NgModule({
   imports: [
     NbCardModule,
     NbButtonModule,
-    Ng2SmartTableModule
+    GridModule
   ],
   declarations: [
     ManageSectorComponent, EditSectorComponent

@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RequestPasswordComponent } from './request-password/request-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { RoleRouteComponent } from './role-route/role-route.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 
 
 const routes: Routes = [
@@ -27,6 +29,14 @@ const routes: Routes = [
       {
         path: 'reset-password',
         component: ResetPasswordComponent, 
+      },
+      {
+        path: 'role-route',
+        component: RoleRouteComponent, 
+      },
+      {
+        path: 'confirm',
+        component: ConfirmComponent, 
       },
     ],
   },

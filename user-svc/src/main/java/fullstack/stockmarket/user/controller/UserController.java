@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fullstack.stockmarket.common.api.BaseResponse;
+import fullstack.stockmarket.common.auth.AuthConstant;
+import fullstack.stockmarket.common.auth.Authorize;
 import fullstack.stockmarket.user.dto.UserDto;
 import fullstack.stockmarket.user.model.User;
 import fullstack.stockmarket.user.res.CreateUserRequest;
@@ -30,6 +32,7 @@ public class UserController {
 	UserService userService;
 	
 	@GetMapping(path="/listAllUsers")
+	//@Authorize(value = {AuthConstant.AUTHORIZATION_AUTHENTICATED_USER})
 	public UserListResponse getAllusers() {
 		List<UserDto> userListDto = userService.getAllusers();
 		UserListResponse userListResponse = new UserListResponse(userListDto);
@@ -50,7 +53,7 @@ public class UserController {
 	
 	@PostMapping(path = "/create") 
 	public UserResponse createUser(@RequestBody @Valid CreateUserRequest request) {
-	    UserDto userDto = userService.create(request.getName(), request.getEmail(), request.getPhoneNumber());
+	    UserDto userDto = userService.create(request.getFullName(), request.getEmail(), request.getPhoneNumber(), request.getPassword());
 	    UserResponse userResponse = new UserResponse(userDto);
 	    return userResponse;
 	}
@@ -66,5 +69,17 @@ public class UserController {
     public BaseResponse deleteAdmin(@RequestParam int userId) {
 		userService.deleteUser(userId);
         return BaseResponse.builder().build();
+    }
+	
+	@PostMapping(path= "/createOrUpdate")
+    public UserResponse createOrUpdateUser(@RequestBody UserDto userDto) {
+		UserDto exsitUser = userService.getUserById(userDto.getId());
+		if(exsitUser != null) {
+			 UserDto updatedUserDto = userService.update(userDto);
+			 return new UserResponse(updatedUserDto);
+		}else {
+			 UserDto newUserDto = userService.create(userDto.getUserName(), userDto.getEmail(), userDto.getPhoneNumber(), userDto.getPasswordHash());
+			 return new UserResponse(newUserDto);
+		}
     }
 }

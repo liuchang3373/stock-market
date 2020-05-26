@@ -1,3 +1,15 @@
-<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
-</ng2-smart-table>
+<div id="action-description">
+    <p>Edit Sector information</p>
+  </div>
+  <div class="control-section">
+    <ejs-grid #grid id='sectorTable' [dataSource]='data'  allowPaging=true 
+    allowSearching=true allowSelection=true [pageSettings]='pageSettings' 
+    [toolbar]='toolbar' (rowSelected)='rowSelected($event)' [editSettings]='editSettings' (actionBegin)='actionBegin($event)' (actionComplete)='actionComplete($event)'>
+        <e-columns>
+            <e-column field='id' headerText='ID' width='140' textAlign='Center' isPrimaryKey='true' [validationRules]='sectorIdRules'></e-column>
+            <e-column field='sectorName' headerText='Sector Name' width='100' textAlign='Center' [validationRules]='sectorNameRules'></e-column>
+            <e-column field='brief' headerText='Brief' width='120' textAlign='Center' [validationRules]='briefRules' ></e-column>
+        </e-columns>
+    </ejs-grid>
+  </div>
 

@@ -1,2 +1,20 @@
-<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
-</ng2-smart-table>
+<div id="action-description">
+    <p>Edit Company information</p>
+  </div>
+  <div class="control-section">
+    <ejs-grid #grid id='companyTable' [dataSource]='data'  allowPaging=true 
+    allowSearching=true allowSelection=true [pageSettings]='pageSettings' 
+    [toolbar]='toolbar' (rowSelected)='rowSelected($event)' [editSettings]='editSettings' (actionBegin)='actionBegin($event)' (actionComplete)='actionComplete($event)'>
+        <e-columns>
+            <e-column field='id' headerText='ID' width='140' textAlign='Center' isPrimaryKey='true' [validationRules]='companyIdRules'></e-column>
+            <e-column field='companyCode' headerText='Company Code' width='100' textAlign='Center' [validationRules]='companyCodeRules'></e-column>
+            <e-column field='companyName' headerText='Company Name' width='100' textAlign='Center' [validationRules]='companyNameRules'></e-column>
+            <e-column field='turnOver' headerText='turnOver' width='100' textAlign='Center' [validationRules]='turnOverRules'></e-column>
+            <e-column field='ceoName' headerText='CEO Name' width='100' textAlign='Center' [validationRules]='ceoNameRules'></e-column>
+            <e-column field='boardDirector' headerText='Board Director' width='100' textAlign='Center' [validationRules]='boardDirectorRules'></e-column>
+            <e-column field='brief' headerText='Brief' width='100' textAlign='Center' [validationRules]='briefRules'></e-column>
+            <e-column field='sectorName' headerText='Sector Name' width='100' textAlign='Center' [validationRules]='sectorNameRules'></e-column>
+            <e-column field='exchangeName' headerText='Exchange Name' width='120' textAlign='Center' [validationRules]='exchangeNameRules' ></e-column>
+        </e-columns>
+    </ejs-grid>
+  </div>

@@ -1,3 +1,17 @@
-<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
-</ng2-smart-table>
+<div id="action-description">
+    <p>Edit Exchange information</p>
+  </div>
+  <div class="control-section">
+    <ejs-grid #grid id='exchangeTable' [dataSource]='data'  allowPaging=true 
+    allowSearching=true allowSelection=true [pageSettings]='pageSettings' 
+    [toolbar]='toolbar' (rowSelected)='rowSelected($event)' [editSettings]='editSettings' (actionBegin)='actionBegin($event)' (actionComplete)='actionComplete($event)'>
+        <e-columns>
+            <e-column field='id' headerText='ID' width='140' textAlign='Center' isPrimaryKey='true' [validationRules]='exchangeIdRules'></e-column>
+            <e-column field='exchangeName' headerText='Exchange Name' width='100' textAlign='Center' [validationRules]='exchangeNameRules'></e-column>
+            <e-column field='contactAddress' headerText='Contact Address' width='100' textAlign='Center' [validationRules]='contactAddressRules'></e-column>
+            <e-column field='remarks' headerText='Remarks' width='100' textAlign='Center' [validationRules]='remarksRules'></e-column>
+            <e-column field='brief' headerText='Brief' width='120' textAlign='Center' [validationRules]='briefRules' ></e-column>
+        </e-columns>
+    </ejs-grid>
+  </div>
 

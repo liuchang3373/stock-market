@@ -6,7 +6,7 @@ import {
 import { CompanyDetailsComponent } from './company-details.component';
 import { ChartAllModule, StockChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { CategoryService, LineSeriesService} from '@syncfusion/ej2-angular-charts';
-import { StockChartComponent } from './stock-chart/stock-chart.component';
+
 
 
 
@@ -18,8 +18,7 @@ import { StockChartComponent } from './stock-chart/stock-chart.component';
     StockChartAllModule
   ],
   declarations: [
-    CompanyDetailsComponent,
-    StockChartComponent
+    CompanyDetailsComponent
   ],
   providers: [ CategoryService, LineSeriesService]
 })
