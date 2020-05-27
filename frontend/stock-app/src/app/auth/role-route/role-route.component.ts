@@ -24,7 +24,10 @@ export class RoleRouteComponent implements OnInit {
         this.router.navigate(['/users']);
       }
     }else{
-      this.router.navigate(['/auth/confirm']);
+      let msg = 'Your account has not activated yet, please activate your acount via E-mail'
+      this.router.navigate(['/auth/confirm'], {
+        queryParams: {message: msg}
+  });
     }
   }
 

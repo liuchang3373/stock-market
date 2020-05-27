@@ -162,9 +162,8 @@ public class UserService {
         	existingUser.setPasswordHash(newUser.getPasswordHash());
         }
         
-        if (newUser.getAccessLevel() != 0 && newUser.getAccessLevel() != existingUser.getAccessLevel()) {
-        	existingUser.setAccessLevel(newUser.getAccessLevel());
-        }
+        existingUser.setAccessLevel(newUser.getAccessLevel());
+        existingUser.setConfirmedAndActive(newUser.isConfirmedAndActive());
         
        
         try {
@@ -238,7 +237,7 @@ public class UserService {
         }
         String path = String.format(pathFormat, token);
         URI link = null;
-        String activateLink = "localhost:8761" + path;
+        String activateLink = "localhost:8761/user-svc" + path;
         try {
             link = new URI("http", "www." + envConfig.getExternalApex(), path, null);
         } catch (URISyntaxException ex) {

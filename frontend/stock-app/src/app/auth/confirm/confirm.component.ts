@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'fsd-confirm',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private activateInfo: ActivatedRoute, router: Router) { }
+  public message: string
   ngOnInit() {
+    this.activateInfo.queryParams.subscribe(queryParams => {
+      this.message = queryParams.message;
+      });
   }
 
 }

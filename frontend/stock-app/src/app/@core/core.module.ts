@@ -63,7 +63,7 @@ export const NB_CORE_PROVIDERS = [
         register: {
           endpoint: '/user-svc/signup',
           redirect: {
-            success: '/auth/confirm',
+            success: '/auth/confirm?message=Confirmation Email has been already send to your E-mail address, please active the accout via E-mail.',
             failure: null, // stay on the same page
           },
           defaultErrors: ['Something went wrong, please try again.'],
