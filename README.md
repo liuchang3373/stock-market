@@ -64,6 +64,38 @@ https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/
 
 One Example of Intergration:
 
+ 		Create a new user:
+		
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/register/1.png)
+
+		Sign in with E-mail and password:
+
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/register/2.png)
+
+		Call API successful:
+
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/register/3.png)
+
+		Activate E-mail has been sent to the registerd E-mail address:
+
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/register/4.png)
+
+		New user has been created with non-confirmed:
+
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/register/6.png)
+		
+		Activate E-mail recieved and click the activate link in E-mail to activate the account: 
+
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/register/5.png)
+
+		The account has been activated:
+
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/register/7.png)
+
+		confirm and active data has been updated to 1: 
+
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/register/8.png)
+
 	        Login with valide Email and password:
 		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/login/1.png)
