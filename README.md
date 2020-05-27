@@ -6,7 +6,7 @@
 
 - **Gateway-svc**: https://github.com/liuchang3373/stock-market/tree/master/gateway-svc/src/main/java/full/stack/stockmarket/gateway
 
-All the services are discovered and registered in Eureka: http://127.0.0.1:8761/
+All the services can be discovered and registered in Eureka: http://127.0.0.1:8761/
 ![screenshots of Eureka instances](https://github.com/liuchang3373/stock-market/blob/master/document/Eureka_Zuul/all_the_instance.png "screenshots of Eureka instances")
 
 Zuul Gateway config:
