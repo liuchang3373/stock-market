@@ -106,31 +106,31 @@ One Example of Intergration:
 
 		In the Edit companies page:
 		
-![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/3.png)
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/admin-company/3.png)
 
 		Call API successful and get data as expect:
 		
-![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/4.png)
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/admin-company/4.png)
 
 		Edit first company and update:
 		
-![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/5.png)
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/admin-company/5.png)
 
 		Call API successful and return the message as expect:
 		
-![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/6.png)
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/admin-company/6.png)
 
 		The result shows as expect:
 		
-![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/7.png)
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/admin-company/7.png)
 
 		Create a new company:
 		
-![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/8.png)
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/admin-company/8.png)
 
 		Call API successfulL:
 		
-![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/9.png)
+![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/admin-company/9.png)
 
 
 
