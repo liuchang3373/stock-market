@@ -67,27 +67,35 @@ One Example of Intergration:
 	        Login with valide Email and password:
 		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/login/1.png)
+
 		After login, JWT token has been stored on local storage:
 		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/login/2.png)
+
 		In the Edit companies page:
 		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/3.png)
+
 		Call API successful and get data as expect:
 		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/4.png)
+
 		Edit first company and update:
 		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/5.png)
+
 		Call API successful and return the message as expect:
 		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/6.png)
+
 		The result shows as expect:
 		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/7.png)
+
 		Create a new company:
 		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/8.png)
+
 		Call API successfulL:
 		
 ![](https://github.com/liuchang3373/stock-market/blob/master/document/intergration_demo/company/9.png)
