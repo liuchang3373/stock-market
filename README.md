@@ -38,8 +38,29 @@ https://github.com/liuchang3373/stock-market/blob/master/common-lib/src/main/jav
 Authorization Service on Angular:
 https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/authorization.service.ts
 
+Login / register Strategy:
+https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/%40core/core.module.ts
+
 Authorization Guard on Angular: 
 https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/authorization.service.ts 
+
+Company Service on Angular:
+https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/%40core/service/company.service.ts
+
+IPO Service on Angular:
+https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/%40core/service/ipo.service.ts
+
+Exchange Service on Angular:
+https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/%40core/service/exchange.service.ts
+
+Sector Service on Angular:
+https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/%40core/service/sector.service.ts
+
+Stock Price Service on Angular:
+https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/%40core/service/stockprice.service.ts
+
+User Service on Angular:
+https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/src/app/%40core/service/user.service.ts
 
 One Example of Intergration:
 
