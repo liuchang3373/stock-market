@@ -12,7 +12,13 @@ import fullstack.stockmarket.email.config.AppConfig;
 import fullstack.stockmarket.email.res.EmailRequest;
 import io.sentry.SentryClient;
 import io.sentry.context.Context;
+
+import javax.mail.internet.MimeMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +34,9 @@ public class EmailSendService {
 
     @Autowired
     SentryClient sentryClient;
+    
+    @Autowired
+    private JavaMailSender mailSender;
 
     @Async(AppConfig.ASYNC_EXECUTOR_NAME)
     public void sendMailAsync(EmailRequest req) {
@@ -45,16 +54,40 @@ public class EmailSendService {
             }
         }
 
-        SingleSendMailRequest mailRequest = new SingleSendMailRequest();
+        /*SingleSendMailRequest mailRequest = new SingleSendMailRequest();
         mailRequest.setAccountName(EmailConstant.FROM);
         mailRequest.setFromAlias(EmailConstant.FROM_NAME);
         mailRequest.setAddressType(1);
         mailRequest.setToAddress(req.getTo());
         mailRequest.setReplyToAddress(false);
         mailRequest.setSubject(req.getSubject());
-        mailRequest.setHtmlBody(req.getHtmlBody());
-
+        mailRequest.setHtmlBody(req.getHtmlBody());*/
+        
+        MimeMessage message = mailSender.createMimeMessage();
+      
+        MimeMessageHelper helper;
         try {
+        	helper = new MimeMessageHelper(message, true);
+	        helper.setFrom(EmailConstant.FROM); 
+	        helper.setTo(req.getTo()); 
+	        helper.setSubject(req.getSubject()); 
+	        helper.setText(req.getHtmlBody(),true); 
+        }catch (Exception ex) {
+        	System.out.println("Unable to send email: " +  ex.toString());
+        }
+        //try {
+        	mailSender.send(message);
+            System.out.println("Successfully sent email - request id : " + req.getTo());
+        //} catch (Exception ex) {
+            /*Context sentryContext = sentryClient.getContext();
+            sentryContext.addTag("subject", req.getSubject());
+            sentryContext.addTag("to", req.getTo());
+            sentryClient.sendException(ex);*/
+            //logger.error("Unable to send email ", Unable to send email, logContext);
+        	//System.out.println("Unable to send email: " +  ex.getCause());
+        //}
+
+       /* try {
             SingleSendMailResponse mailResponse = acsClient.getAcsResponse(mailRequest);
             //logger.info("Successfully sent email - request id : " + mailResponse.getRequestId(), logContext);
         } catch (ClientException ex) {
@@ -63,6 +96,6 @@ public class EmailSendService {
             sentryContext.addTag("to", req.getTo());
             sentryClient.sendException(ex);
             //logger.error("Unable to send email ", ex, logContext);
-        }
+        }*/
     }
 }

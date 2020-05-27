@@ -40,7 +40,7 @@ public class Sign {
         return algorithm;
     }
 
-    public static String generateEmailConfirmationToken(String userId, String email, String signingToken) {
+    public static String generateEmailConfirmationToken(int userId, String email, String signingToken) {
         Algorithm algorithm = getAlgorithm(signingToken);
         String token = JWT.create()
                 .withClaim(CLAIM_EMAIL, email)

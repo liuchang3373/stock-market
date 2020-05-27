@@ -2,15 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of as observableOf, Observable, } from 'rxjs';
 import { SectorModel, SectorChangeModel, SectorListRes, SectorRes} from '../model/sectorModel';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class SectorService  {
   constructor(public http: HttpClient) {
    
   }
+  private baseUrl = environment.apiUrl;
+  private sectorEndpoint = '/sector-svc/sector';
+
+  private listAllSectors = '/listAllSectors'
+  private createOrUpdate = '/createOrUpdate'
+  private delete = '/delete'
+
   getSectorListData(): Observable<any> {
+    let url = this.baseUrl + this.sectorEndpoint + this.listAllSectors
     const data = this.http
-    .get<SectorListRes>('/api/sector-svc/sector/listAllSectors')
+    .get<SectorListRes>(url)
      return data;
   }
 
@@ -21,14 +30,17 @@ export class SectorService  {
   }
 
   createOrUpdateSector(body: any): Observable<SectorRes> {
+    let url = this.baseUrl + this.sectorEndpoint + this.createOrUpdate
     const data = this.http
-    .post<SectorRes>('/api/sector-svc/sector/createOrUpdate', body)
+    .post<SectorRes>(url, body)
      return data;
   }
 
   deleteSector(id: number): Observable<SectorRes> {
+    let url = this.baseUrl + this.sectorEndpoint + this.delete
+    let param = '?sectorId=' + id
     const data = this.http
-    .delete<SectorRes>('/api/sector-svc/sector/delete?sectorId=' + id)
+    .delete<SectorRes>(url + param)
      return data;
   }
 }

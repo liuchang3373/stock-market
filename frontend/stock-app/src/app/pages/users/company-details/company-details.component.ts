@@ -30,7 +30,7 @@ export class CompanyDetailsComponent {
         this.companyCode = queryParams.companyCode;
         });
     //alert("companyCode: " + this.companyCode);
-    this.stockService.getCompanyStockPriceListData()
+    this.stockService.getCompanyStockPriceListData(this.companyCode)
       .subscribe(
         (data)=> { 
           this.stockchartData = data

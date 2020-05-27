@@ -10,7 +10,7 @@ export class ComparisonComponent{
   constructor( public router:Router) { }
   gotoComparisonChart(){
     let navigationExtras: NavigationExtras = {
-    queryParams: { 'companyCode': '002931' },
+    queryParams: { 'companyCode': '002932' },
     fragment: 'anchor'
     };
     this.router.navigate(['/users/comparison-charts'],navigationExtras);

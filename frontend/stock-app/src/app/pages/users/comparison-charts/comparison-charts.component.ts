@@ -22,8 +22,9 @@ export class ComparisonChartsComponent {
     this.service.getCompanyDetailsData(this.companyCode)
     .subscribe(
       (data: CompanyRes)=> { 
+        console.log("service=====: " + JSON.stringify(data));
         this.companyDetailsData = data.companyDto; 
-        //console.log("service: " + JSON.stringify(data));
+        
       },
       err => console.error(err),
       () => console.log('done')

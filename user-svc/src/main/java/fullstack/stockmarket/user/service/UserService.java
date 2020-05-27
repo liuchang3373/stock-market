@@ -11,13 +11,23 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import fullstack.stockmarket.common.api.BaseResponse;
 import fullstack.stockmarket.common.api.ResultCode;
+import fullstack.stockmarket.common.env.EnvConfig;
 import fullstack.stockmarket.common.error.ServiceException;
+import fullstack.stockmarket.crypto.Sign;
+import fullstack.stockmarket.email.client.EmailClient;
+import fullstack.stockmarket.email.res.EmailRequest;
+import fullstack.stockmarket.user.UserConstant;
 import fullstack.stockmarket.user.dto.UserDto;
 import fullstack.stockmarket.user.model.User;
+import fullstack.stockmarket.user.props.AppProps;
 import fullstack.stockmarket.user.repo.UserRepo;
 
 import static java.util.stream.Collectors.toList;
+
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @Service
 public class UserService {
@@ -30,7 +40,14 @@ public class UserService {
 	@PersistenceContext
     EntityManager entityManager;
 	
+	@Autowired
+    private AppProps appProps;
 	
+	@Autowired
+    private EnvConfig envConfig;
+	
+	@Autowired
+    private EmailClient emailClient;
 	
 	public List<UserDto> getAllusers() {
 		List<User> users = userRepo.findAll();
@@ -92,6 +109,17 @@ public class UserService {
         }
         
         UserDto userDto = this.convertToDto(user);
+        if (StringUtils.hasText(email)) {
+            // Email confirmation
+
+            String emailName = name;
+            if (StringUtils.isEmpty(emailName)) {
+                emailName = "there";
+            }
+
+            String subject = "Activate your stock-market account";
+            this.sendEmail(userDto.getId(), email, emailName, subject, UserConstant.ACTIVATE_ACCOUNT_TMPL, true);
+        }
         return userDto;
 	}
 	
@@ -192,6 +220,62 @@ public class UserService {
 	
 	private User convertToModel(UserDto userDto) {
         return modelMapper.map(userDto, User.class);
+    }
+	
+	public void sendEmail(int userId, String email, String name, String subject, String template, boolean activateOrConfirm) {
+        String token = null;
+        try {
+            token = Sign.generateEmailConfirmationToken(userId, email, appProps.getSigningSecret());
+        } catch(Exception ex) {
+            String errMsg = "Could not create token";
+            //serviceHelper.handleException(logger, ex, errMsg);
+            throw new ServiceException(errMsg, ex);
+        }
+
+        String pathFormat = "/activate/%s";
+        if (!activateOrConfirm) {
+            pathFormat = "/reset/%s";
+        }
+        String path = String.format(pathFormat, token);
+        URI link = null;
+        String activateLink = "localhost:8761" + path;
+        try {
+            link = new URI("http", "www." + envConfig.getExternalApex(), path, null);
+        } catch (URISyntaxException ex) {
+            String errMsg = "Could not create activation url";
+            if (!activateOrConfirm) {
+                errMsg = "Could not create reset url";
+            }
+            //serviceHelper.handleException(logger, ex, errMsg);
+            throw new ServiceException(errMsg, ex);
+        }
+
+        String htmlBody = null;
+        if (activateOrConfirm) { // active or confirm
+            htmlBody = String.format(template, name, activateLink.toString(), activateLink.toString(), activateLink.toString());
+        } else { // reset
+            htmlBody = String.format(template, activateLink.toString(), activateLink.toString());
+        }
+
+        EmailRequest emailRequest = EmailRequest.builder()
+                .to(email)
+                .name(name)
+                .subject(subject)
+                .htmlBody(htmlBody)
+                .build();
+
+        BaseResponse baseResponse = null;
+        try {
+            baseResponse = emailClient.send(emailRequest);
+        } catch (Exception ex) {
+            String errMsg = "Unable to send email";
+            //serviceHelper.handleException(logger, ex, errMsg);
+            throw new ServiceException(errMsg, ex);
+        }
+        if (!baseResponse.isSuccess()) {
+            //serviceHelper.handleError(logger, baseResponse.getMessage());
+            throw new ServiceException(baseResponse.getMessage());
+        }
     }
 
 }

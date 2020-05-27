@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: email-svc
+  mail:
+    host: smtp.163.com
+    username: liuchang3373@163.com
+    password: LAEAITYCCDYUBQVG
+    default-encoding: UTF-8
 eureka:
   client:
     registerWithEureka: true

@@ -20,6 +20,7 @@ stock:
   signing-secret: 123
   company-service-endpoint: http://localhost:8081
   user-service-endpoint: http://localhost:8080
+  email-service-endpoint: http://localhost:8803
 management:
   endpoints:
     web:
