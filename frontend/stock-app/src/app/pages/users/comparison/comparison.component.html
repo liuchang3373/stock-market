@@ -13,13 +13,13 @@
                                 <nb-card accent="info">
                                     <nb-card-header class="companycomparison-header">Select one or two companies:</nb-card-header>
                                         <nb-card-body>
-                                            <fsd-different-company></fsd-different-company>
+                                            <ejs-multiselect #company id='company-select' [dataSource]='companyName' [mode]='default' [fields]='fields' [placeholder]='waterMark'></ejs-multiselect>
                                         </nb-card-body>
                                 </nb-card>
                                 <nb-card accent="info">
                                     <nb-card-header class="companycomparison-header">Select date:</nb-card-header>
                                         <nb-card-body>
-                                            <fsd-date-picker></fsd-date-picker>
+                                            <ejs-datepicker #companyDate id='datepicker'></ejs-datepicker>
                                         </nb-card-body>
                                 </nb-card>
                                 <button nbButton fullWidth size="large" status="primary" (click)='gotoComparisonChart()'> Generate Chart</button>
@@ -39,7 +39,7 @@
                                 <nb-card accent="info">
                                     <nb-card-header class="companycomparison-header">Select date:</nb-card-header>
                                         <nb-card-body>
-                                            <fsd-date-picker></fsd-date-picker>
+                                            <ejs-datepicker id='datepicker'></ejs-datepicker>
                                         </nb-card-body>
                                 </nb-card>
                                 <button nbButton fullWidth size="large" status="primary"> Generate Chart</button>

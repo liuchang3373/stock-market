@@ -1,0 +1,171 @@
+version: '3.7'
+
+services:
+  company-service:
+    build: ./company-svc
+    image: lchangcd/company-svc
+    environment:
+      - SPRING_PROFILES_ACTIVE
+      - SERVER_PORT
+      - COMPANY_SERVICE_ENDPOINT
+      - USER_SERVICE_ENDPOINT
+      - SECTOR_SERVICE_ENDPOINT
+      - STOCKPRICE_SERVICE_ENDPOINT
+      - EMAIL_SERVICE_ENDPOINT
+      - EXCHANGE_SERVICE_ENDPOINT
+      - GATEWAY_SERVICE_ENDPOINT
+      - EUREKA_SERVICE_ENDPOINT
+      - COMPANY_DATASOURCE_URL
+      - COMPANY_DATASOURCE_USERNAME
+      - COMPANY_DATASOURCE_PASSWORD  
+    depends_on:
+      - sector-service  
+      - exchange-service
+      - gateway-service
+    networks:
+      - internal_access
+      - external_access # db access
+    
+    
+
+  sector-service:
+    build: ./sector-svc
+    image: lchangcd/sector-svc
+    environment:
+      - SPRING_PROFILES_ACTIVE
+      - SERVER_PORT
+      - COMPANY_SERVICE_ENDPOINT
+      - USER_SERVICE_ENDPOINT
+      - SECTOR_SERVICE_ENDPOINT
+      - STOCKPRICE_SERVICE_ENDPOINT
+      - EMAIL_SERVICE_ENDPOINT
+      - EXCHANGE_SERVICE_ENDPOINT
+      - GATEWAY_SERVICE_ENDPOINT
+      - EUREKA_SERVICE_ENDPOINT
+      - SECTOR_DATASOURCE_URL
+      - SECTOR_DATASOURCE_USERNAME
+      - SECTOR_DATASOURCE_PASSWORD  
+    networks:
+      - internal_access
+      - external_access # db access
+
+
+  stockprice-service:
+    build: ./stockprice-svc
+    image: lchangcd/stockprice-svc
+    environment:
+      - SPRING_PROFILES_ACTIVE
+      - SERVER_PORT
+      - COMPANY_SERVICE_ENDPOINT
+      - USER_SERVICE_ENDPOINT
+      - SECTOR_SERVICE_ENDPOINT
+      - STOCKPRICE_SERVICE_ENDPOINT
+      - EMAIL_SERVICE_ENDPOINT
+      - EXCHANGE_SERVICE_ENDPOINT
+      - GATEWAY_SERVICE_ENDPOINT
+      - EUREKA_SERVICE_ENDPOINT
+      - STOCKPRICE_DATASOURCE_URL
+      - STOCKPRICE_DATASOURCE_USERNAME
+      - STOCKPRICE_DATASOURCE_PASSWORD 
+    networks:
+      - internal_access
+      - external_access # db access
+      
+  exchange-service:
+    build: ./exchange-svc
+    image: lchangcd/exchange-svc
+    environment:
+      - SPRING_PROFILES_ACTIVE
+      - SERVER_PORT
+      - COMPANY_SERVICE_ENDPOINT
+      - USER_SERVICE_ENDPOINT
+      - SECTOR_SERVICE_ENDPOINT
+      - STOCKPRICE_SERVICE_ENDPOINT
+      - EMAIL_SERVICE_ENDPOINT
+      - EXCHANGE_SERVICE_ENDPOINT
+      - GATEWAY_SERVICE_ENDPOINT
+      - EUREKA_SERVICE_ENDPOINT
+      - EXCHANGE_DATASOURCE_URL
+      - EXCHANGE_DATASOURCE_USERNAME
+      - EXCHANGE_DATASOURCE_PASSWORD
+    networks:
+      - internal_access
+      - external_access # db access
+      
+  user-service:
+    build: ./user-svc
+    image: lchangcd/user-svc
+    environment:
+      - SPRING_PROFILES_ACTIVE
+      - SERVER_PORT
+      - SIGNING_SECRET
+      - COMPANY_SERVICE_ENDPOINT
+      - USER_SERVICE_ENDPOINT
+      - SECTOR_SERVICE_ENDPOINT
+      - STOCKPRICE_SERVICE_ENDPOINT
+      - EMAIL_SERVICE_ENDPOINT
+      - EXCHANGE_SERVICE_ENDPOINT
+      - GATEWAY_SERVICE_ENDPOINT
+      - EUREKA_SERVICE_ENDPOINT
+      - USER_DATASOURCE_URL
+      - USER_DATASOURCE_USERNAME
+      - USER_DATASOURCE_PASSWORD 
+    networks:
+      - internal_access
+      - external_access # db access
+
+  email-service:
+    build: ./user-svc
+    image: lchangcd/user-svc
+    environment:
+      - SPRING_PROFILES_ACTIVE
+      - SERVER_PORT
+      - EMAIL_HOST
+      - EMAIL_USER_NAME
+      - EAMIL_PASSWORD
+      - DEFAULT_ENCODING
+      - COMPANY_SERVICE_ENDPOINT
+      - USER_SERVICE_ENDPOINT
+      - SECTOR_SERVICE_ENDPOINT
+      - STOCKPRICE_SERVICE_ENDPOINT
+      - EMAIL_SERVICE_ENDPOINT
+      - EXCHANGE_SERVICE_ENDPOINT
+      - GATEWAY_SERVICE_ENDPOINT
+      - EUREKA_SERVICE_ENDPOINT
+    networks:
+      - internal_access
+      - external_access # db access
+      
+  gateway-service:
+    build: ./gateway-svc
+    image: lchangcd/gateway-svc
+    environment:
+      - SPRING_PROFILES_ACTIVE
+      - SERVER_PORT
+      - COMPANY_SERVICE_ENDPOINT
+      - USER_SERVICE_ENDPOINT
+      - SECTOR_SERVICE_ENDPOINT
+      - STOCKPRICE_SERVICE_ENDPOINT
+      - EMAIL_SERVICE_ENDPOINT
+      - EXCHANGE_SERVICE_ENDPOINT
+      - GATEWAY_SERVICE_ENDPOINT
+    networks:
+      - internal_access
+      - external_access # db access
+    ports:
+      - 80:80
+
+  stockapp-service:
+    build:
+      context: ./frontend
+      dockerfile: stock-app/Dockerfile
+    image: lchangcd/stock-app
+    networks:
+      - internal_access
+  
+
+networks:
+  internal_access:
+    internal: true
+  external_access:
+

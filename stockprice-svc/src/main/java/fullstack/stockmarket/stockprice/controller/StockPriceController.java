@@ -1,5 +1,6 @@
 package fullstack.stockmarket.stockprice.controller;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 
 import fullstack.stockmarket.common.api.BaseResponse;
 import fullstack.stockmarket.stockprice.dto.StockPriceDto;
-import fullstack.stockmarket.stockprice.model.StockPrice;
+import fullstack.stockmarket.stockprice.dto.TwoCompanyStockChangeDto;
 import fullstack.stockmarket.stockprice.res.StockPriceListResponse;
 import fullstack.stockmarket.stockprice.res.StockPriceResponse;
+import fullstack.stockmarket.stockprice.res.TwoCompanyStockChangeResponse;
 import fullstack.stockmarket.stockprice.service.StockPriceService;
 
 
@@ -37,6 +37,13 @@ public class StockPriceController {
 		StockPriceListResponse StockPriceListResponse = new StockPriceListResponse(StockPriceListDto);
 		
 		return StockPriceListResponse;
+	}
+	
+	@GetMapping(path="/getTwoCompanyStock")
+	public TwoCompanyStockChangeResponse getTwoCompanyStock(@RequestParam String company1Code, @RequestParam String company2Code, @RequestParam Date pickedDate1, @RequestParam Date pickedDate2) {
+		TwoCompanyStockChangeDto twoCompanyStockChange = stockPriceService.getTwoCompanyStock(company1Code, company2Code, pickedDate1, pickedDate2);
+		TwoCompanyStockChangeResponse twoCompanyStockChangeResponse = new TwoCompanyStockChangeResponse(twoCompanyStockChange);
+		return twoCompanyStockChangeResponse;
 	}
 	
 	@PostMapping(path = "/import")

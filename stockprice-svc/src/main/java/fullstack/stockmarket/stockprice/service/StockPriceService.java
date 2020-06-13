@@ -2,12 +2,11 @@ package fullstack.stockmarket.stockprice.service;
 
 import static java.util.stream.Collectors.toList;
 
-
+import java.sql.Date;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -29,7 +28,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import fullstack.stockmarket.common.api.ResultCode;
 import fullstack.stockmarket.common.error.ServiceException;
+import fullstack.stockmarket.stockprice.dto.StockChangeDto;
 import fullstack.stockmarket.stockprice.dto.StockPriceDto;
+import fullstack.stockmarket.stockprice.dto.TwoCompanyStockChangeDto;
 import fullstack.stockmarket.stockprice.model.StockPrice;
 import fullstack.stockmarket.stockprice.repo.StockPriceRepo;
 
@@ -169,10 +170,48 @@ public class StockPriceService {
 		return stockPriceList;
 	}
 	
+	public TwoCompanyStockChangeDto getTwoCompanyStock(String company1Code, String company2Code, Date pickedDate1, Date pickedDate2) {
+		StockPrice company1StockPriceDto = stockPriceRepo.findByCompanyCodeAndDate(company1Code, pickedDate1);
+		StockPrice company2StockPriceDto = stockPriceRepo.findByCompanyCodeAndDate(company2Code, pickedDate1);
+		float openPrice1 = company1StockPriceDto.getOpen();
+		float openPrice2 = company2StockPriceDto.getOpen();
+		
+		float highPrice1 = company1StockPriceDto.getHigh();
+		float highPrice2 = company2StockPriceDto.getHigh();
+		
+		float lowPrice1 = company1StockPriceDto.getLow();
+		float lowPrice2 = company2StockPriceDto.getLow();
+		
+		float highChange1 = ((highPrice1 - openPrice1) / openPrice1) * 100;
+		float highChange2 = ((highPrice2 - openPrice2) / openPrice2) * 100;
+		
+		float lowChange1 = ((lowPrice1 - openPrice1) / openPrice1) * 100;
+		float lowChange2 = ((lowPrice2 - openPrice2) / openPrice2) * 100;
+		
+		StockChangeDto StockChangeDto1 = new StockChangeDto();
+		StockChangeDto1.setX(pickedDate1.toString());
+		StockChangeDto1.setHigh(highChange1);
+		StockChangeDto1.setLow(lowChange1);
+		
+		StockChangeDto StockChangeDto2 = new StockChangeDto();
+		StockChangeDto2.setX(pickedDate2.toString());
+		StockChangeDto2.setHigh(highChange2);
+		StockChangeDto2.setLow(lowChange2);
+		
+		TwoCompanyStockChangeDto twoCompanyStockChangeDto = new TwoCompanyStockChangeDto();
+		List<StockChangeDto> StockChangeList1Dto = new ArrayList<StockChangeDto>();
+		StockChangeList1Dto.add(StockChangeDto1);
+		List<StockChangeDto> StockChangeList2Dto = new ArrayList<StockChangeDto>();
+		StockChangeList2Dto.add(StockChangeDto2);
+		twoCompanyStockChangeDto.setCompany1(StockChangeList1Dto);
+		twoCompanyStockChangeDto.setCompany2(StockChangeList2Dto);
+		return twoCompanyStockChangeDto;
+	}
+	
+	
 	public java.sql.Date strToDate(String strDate) throws ParseException {
         String str = strDate;
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        System.out.println("strDate=== " + str);
         java.util.Date d = null;
         d = format.parse(str);
         java.sql.Date date = new java.sql.Date(d.getTime());

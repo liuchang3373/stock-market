@@ -1,5 +1,10 @@
-server:
-  port: 8761 
+spring:
+  profiles:
+    active: dev
+  application:
+    name: gateway-service
+
+
 eureka:
   client:
     registerWithEureka: false   

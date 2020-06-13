@@ -4,7 +4,7 @@ spring:
   profiles:
     active: dev
   application:
-    name: stockprice-service
+    name: stockprice-svc
   datasource:
     url: ${STOCKPRICE_DATASOURCE_URL}
     username: ${STOCKPRICE_DATASOURCE_USERNAME}
@@ -13,7 +13,13 @@ spring:
     hibernate:
       ddl-auto: validate
 
-            
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_ENDPOINT}
+      
 stock:
   company-service-endpoint: ${COMPANY_SERVICE_ENDPOINT}
   exchange-service-endpoint: ${EXCHANGE_SERVICE_ENDPOINT}

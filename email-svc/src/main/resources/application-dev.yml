@@ -1,8 +1,6 @@
 server:
   port: 8803
 spring:
-  application:
-    name: email-svc
   mail:
     host: smtp.163.com
     username: liuchang3373@163.com

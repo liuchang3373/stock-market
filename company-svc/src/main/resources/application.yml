@@ -4,7 +4,7 @@ spring:
   profiles:
     active: dev
   application:
-    name: company-service
+    name: company-svc
   datasource:
     url: ${COMPANY_DATASOURCE_URL}
     username: ${COMPANY_DATASOURCE_USERNAME}
@@ -12,7 +12,12 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_ENDPOINT}
             
 stock:
   company-service-endpoint: ${COMPANY_SERVICE_ENDPOINT}

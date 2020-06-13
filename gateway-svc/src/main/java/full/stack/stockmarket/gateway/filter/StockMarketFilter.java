@@ -71,20 +71,7 @@ public class StockMarketFilter extends ZuulFilter{
         }
         ctx.addZuulRequestHeader(AuthConstant.AUTHORIZATION_HEADER, authorization);
         
-        HttpServletResponse response = ctx.getResponse();
-        response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
-        response.setHeader("Access-Control-Allow-Credentials", "true");
-        response.setHeader("Access-Control-Allow-Methods", "GET, HEAD, POST, PUT, DELETE, OPTIONS, PATCH");
-        response.setHeader("Access-Control-Allow-Headers", "x-access-token, content-type");
-        response.setHeader("Access-Control-Expose-Headers", "X-forwared-port, X-forwarded-host");
-        response.setHeader("Vary", "Origin,Access-Control-Request-Method,Access-Control-Request-Headers");
-        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
-            ctx.setSendZuulResponse(false); 
-            ctx.setResponseStatusCode(HttpStatus.OK.value());
-            return null;
-        }
-        ctx.setSendZuulResponse(true); 
-        ctx.setResponseStatusCode(HttpStatus.OK.value());
+        
         return authorization;
     }
     
