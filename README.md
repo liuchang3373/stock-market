@@ -1,5 +1,81 @@
 # stock-market
 
+### Milestone 5 (Submitted by Jack.Liu on 6/15/2020)
+
+###### JMeter to perform Performance Testing of API:
+
+Sector-Services end point:
+
+- **Test Plan.jmx**:  https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/Test%20Plan.jmx
+
+- **API testing for HTTP GET**: https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/HTTP%20Request_sector_get.jmx
+
+- **API testing for HTTP PUT**: https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/HTTP%20Request_sector_put.jmx
+
+- **API testing for HTTP POST**: https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/HTTP%20Request_sector_post.jmx
+
+Test Result:
+ 	HTTP GET: 
+	![screenshots of HTTP GET Result](https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/View%20Results%20Tree_sector_get.png "screenshots of HTTP GET Result")
+	![screenshots of HTTP GET Result](https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/Graph%20Results_sector_get.png "screenshots of HTTP GET Result")
+	![screenshots of HTTP GET Result](https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/Aggregate%20Report_sector_get.png "screenshots of HTTP GET Result")
+	HTTP PUT: 
+	![screenshots of HTTP PUT Result](https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/View%20Results%20Tree_sector_put.png "screenshots of HTTP PUT Result")
+	![screenshots of HTTP PUT Result](https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/Graph%20Results_sector_put.png "screenshots of HTTP PUT Result")
+	![screenshots of HTTP PUT Result](https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/Aggregate%20Report_sector_put.png "screenshots of HTTP PUT Result")
+	HTTP POST: 
+	![screenshots of HTTP POST Result](https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/View%20Results%20Tree_sector_post.png "screenshots of HTTP POST Result")
+	![screenshots of HTTP POST Result](https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/Graph%20Results_sector_post.png "screenshots of HTTP POST Result")
+	![screenshots of HTTP POST Result](https://github.com/liuchang3373/stock-market/blob/master/document/jmeter/Aggregate%20Report_sector_post.png "screenshots of HTTP POST Result")
+
+
+###### Dockerfiles:
+
+Dockerfiles for each service:
+
+- **Company-service**: https://github.com/liuchang3373/stock-market/blob/master/company-svc/Dockerfile
+
+- **Email-service**: https://github.com/liuchang3373/stock-market/blob/master/email-svc/Dockerfile
+
+- **Exchange-service**: https://github.com/liuchang3373/stock-market/blob/master/exchange-svc/Dockerfile
+
+- **Gateway-service**: https://github.com/liuchang3373/stock-market/blob/master/gateway-svc/Dockerfile
+
+- **Sector-service**: https://github.com/liuchang3373/stock-market/blob/master/sector-svc/Dockerfile
+
+- **Stockprice-service**: https://github.com/liuchang3373/stock-market/blob/master/stockprice-svc/Dockerfile
+
+- **User-service**: https://github.com/liuchang3373/stock-market/blob/master/user-svc/Dockerfile
+
+- **Stock-app-service(front-end)**: https://github.com/liuchang3373/stock-market/blob/master/frontend/stock-app/Dockerfile
+
+Docker-Compose file for all the service:
+
+- **Docker-Compose file**: https://github.com/liuchang3373/stock-market/blob/master/docker-compose.yml
+
+- **Environment file**: https://github.com/liuchang3373/stock-market/blob/master/.env
+
+Docker build logs:
+
+- **Docker build log**: https://github.com/liuchang3373/stock-market/blob/master/document/docker/docker_log.txt
+
+- **All the services started**: 
+
+![screenshots of docker-compose-up](https://github.com/liuchang3373/stock-market/blob/master/document/docker/docker-compose-up.png "screenshots of docker-compose-up")
+
+
+###### Jenkinsfiles:
+
+- **CI-Jenkins files**: https://github.com/liuchang3373/stock-market/blob/master/JenkinsfileCI
+
+Jenkins build logs: https://github.com/liuchang3373/stock-market/blob/master/document/jenkins/consoleText.txt
+
+- **CD-Jenkins files**: https://github.com/liuchang3373/stock-market/blob/master/JenkinsfileCD
+
+Jenkins deploy logs: 
+
+
+
 ### Milestone 4 (Submitted by Jack.Liu on 5/26/2020)
 
 ###### Zuul(API Gateway) And Eureka Service :
