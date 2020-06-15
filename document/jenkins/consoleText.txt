@@ -1,0 +1,617 @@
+Started by user Chang Liu
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\Users\ChangLiu\.jenkins\workspace\stock-market-build
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (pull code from github)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] echo
+pulling code from github.
+[Pipeline] git
+using credential lchangcd
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/liuchang3373/stock-market # timeout=10
+Fetching upstream changes from https://github.com/liuchang3373/stock-market
+ > git.exe --version # timeout=10
+using GIT_ASKPASS to set credentials github
+ > git.exe fetch --tags --progress -- https://github.com/liuchang3373/stock-market +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision bfa9c3c6bcc4e4ef7a299067ec973c67c62456a5 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f bfa9c3c6bcc4e4ef7a299067ec973c67c62456a5 # timeout=10
+ > git.exe branch -a -v --no-abbrev # timeout=10
+ > git.exe branch -D master # timeout=10
+ > git.exe checkout -b master bfa9c3c6bcc4e4ef7a299067ec973c67c62456a5 # timeout=10
+Commit message: "commit with docker files and jmeter files"
+ > git.exe rev-list --no-walk bfa9c3c6bcc4e4ef7a299067ec973c67c62456a5 # timeout=10
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build project)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] echo
+building project.
+[Pipeline] bat
+
+C:\Users\ChangLiu\.jenkins\workspace\stock-market-build>mvn clean package 
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] FSD MicroServices Training Project                                 [pom]
+[INFO] common-lib                                                         [jar]
+[INFO] company-api                                                        [jar]
+[INFO] exchange-api                                                       [jar]
+[INFO] sector-api                                                         [jar]
+[INFO] company-svc                                                        [jar]
+[INFO] exchange-svc                                                       [jar]
+[INFO] email-api                                                          [jar]
+[INFO] email-svc                                                          [jar]
+[INFO] user-api                                                           [jar]
+[INFO] user-svc                                                           [jar]
+[INFO] sector-svc                                                         [jar]
+[INFO] stockprice-api                                                     [jar]
+[INFO] stockprice-svc                                                     [jar]
+[INFO] gateway-svc                                                        [jar]
+[INFO] 
+[INFO] --------------< fullstack.stockmarket:stockmarket-parent >--------------
+[INFO] Building FSD MicroServices Training Project 1.0                   [1/15]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ stockmarket-parent ---
+[INFO] 
+[INFO] ------------------< fullstack.stockmarket:common-lib >------------------
+[INFO] Building common-lib 1.0.0                                         [2/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for com.sun.jersey:jersey-core:jar:1.19.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The POM for com.sun.jersey:jersey-client:jar:1.19.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The POM for com.sun.jersey.contribs:jersey-apache-client4:jar:1.19.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The POM for com.google.inject:guice:jar:4.1.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The POM for com.github.andrewoma.dexx:dexx-collections:jar:0.2 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The POM for org.codehaus.woodstox:stax2-api:jar:3.1.4 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The POM for com.netflix.ribbon:ribbon-transport:jar:2.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The POM for com.netflix.zuul:zuul-core:jar:1.3.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-lib ---
+[INFO] Deleting C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\common-lib\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ common-lib ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\common-lib\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ common-lib ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 25 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\common-lib\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ common-lib ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\common-lib\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ common-lib ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\common-lib\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ common-lib ---
+[INFO] Surefire report directory: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\common-lib\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running fullstack.stockmarket.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ common-lib ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\common-lib\target\common-lib-1.0.0.jar
+[INFO] 
+[INFO] -----------------< fullstack.stockmarket:company-api >------------------
+[INFO] Building company-api 1.0.0                                        [3/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ company-api ---
+[INFO] Deleting C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\company-api\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ company-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\company-api\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ company-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\company-api\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ company-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\company-api\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ company-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\company-api\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ company-api ---
+[INFO] Surefire report directory: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\company-api\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.company.api.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ company-api ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\company-api\target\company-api-1.0.0.jar
+[INFO] 
+[INFO] -----------------< fullstack.stockmarket:exchange-api >-----------------
+[INFO] Building exchange-api 1.0.0                                       [4/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ exchange-api ---
+[INFO] Deleting C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\exchange-api\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ exchange-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\exchange-api\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ exchange-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\exchange-api\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ exchange-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\exchange-api\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ exchange-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\exchange-api\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ exchange-api ---
+[INFO] Surefire report directory: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\exchange-api\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.exchange.api.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ exchange-api ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\exchange-api\target\exchange-api-1.0.0.jar
+[INFO] 
+[INFO] ------------------< fullstack.stockmarket:sector-api >------------------
+[INFO] Building sector-api 1.0.0                                         [5/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ sector-api ---
+[INFO] Deleting C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\sector-api\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ sector-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\sector-api\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ sector-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\sector-api\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ sector-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\sector-api\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ sector-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\sector-api\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ sector-api ---
+[INFO] Surefire report directory: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\sector-api\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.sector.api.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ sector-api ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\sector-api\target\sector-api-1.0.0.jar
+[INFO] 
+[INFO] -----------------< fullstack.stockmarket:company-svc >------------------
+[INFO] Building company-svc 1.0.0                                        [6/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ company-svc ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ company-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ company-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\company-svc\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ company-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\company-svc\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ company-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\company-svc\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ company-svc ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ company-svc ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\company-svc\target\company-svc-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.2.RELEASE:repackage (default) @ company-svc ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] -----------------< fullstack.stockmarket:exchange-svc >-----------------
+[INFO] Building exchange-svc 1.0.0                                       [7/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ exchange-svc ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ exchange-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ exchange-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\exchange-svc\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ exchange-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\exchange-svc\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ exchange-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\exchange-svc\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ exchange-svc ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ exchange-svc ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\exchange-svc\target\exchange-svc-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.2.RELEASE:repackage (default) @ exchange-svc ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] ------------------< fullstack.stockmarket:email-api >-------------------
+[INFO] Building email-api 1.0.0                                          [8/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ email-api ---
+[INFO] Deleting C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\email-api\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ email-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\email-api\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ email-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\email-api\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ email-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\email-api\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ email-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\email-api\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ email-api ---
+[INFO] Surefire report directory: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\email-api\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.email.api.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.096 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ email-api ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\email-api\target\email-api-1.0.0.jar
+[INFO] 
+[INFO] ------------------< fullstack.stockmarket:email-svc >-------------------
+[INFO] Building email-svc 1.0.0                                          [9/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ email-svc ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ email-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ email-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\email-svc\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ email-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\email-svc\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ email-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\email-svc\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ email-svc ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ email-svc ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\email-svc\target\email-svc-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.2.RELEASE:repackage (default) @ email-svc ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] -------------------< fullstack.stockmarket:user-api >-------------------
+[INFO] Building user-api 1.0.0                                          [10/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ user-api ---
+[INFO] Deleting C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-api\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ user-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-api\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ user-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-api\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ user-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-api\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ user-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-api\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ user-api ---
+[INFO] Surefire report directory: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-api\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.user.api.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.174 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ user-api ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-api\target\user-api-1.0.0.jar
+[INFO] 
+[INFO] -------------------< fullstack.stockmarket:user-svc >-------------------
+[INFO] Building user-svc 1.0.0                                          [11/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ user-svc ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ user-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ user-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-svc\target\classes
+[INFO] /C:/Users/ChangLiu/.jenkins/workspace/stock-market-build/user-svc/src/main/java/fullstack/stockmarket/user/controller/LoginController.java: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-svc\src\main\java\fullstack\stockmarket\user\controller\LoginController.java uses unchecked or unsafe operations.
+[INFO] /C:/Users/ChangLiu/.jenkins/workspace/stock-market-build/user-svc/src/main/java/fullstack/stockmarket/user/controller/LoginController.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ user-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-svc\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ user-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-svc\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ user-svc ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ user-svc ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\user-svc\target\user-svc-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.2.RELEASE:repackage (default) @ user-svc ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] ------------------< fullstack.stockmarket:sector-svc >------------------
+[INFO] Building sector-svc 1.0.0                                        [12/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ sector-svc ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ sector-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ sector-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\sector-svc\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ sector-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\sector-svc\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ sector-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\sector-svc\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ sector-svc ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ sector-svc ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\sector-svc\target\sector-svc-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.2.RELEASE:repackage (default) @ sector-svc ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] ----------------< fullstack.stockmarket:stockprice-api >----------------
+[INFO] Building stockprice-api 1.0.0                                    [13/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ stockprice-api ---
+[INFO] Deleting C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\stockprice-api\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stockprice-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\stockprice-api\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ stockprice-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\stockprice-api\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ stockprice-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\stockprice-api\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ stockprice-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\stockprice-api\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ stockprice-api ---
+[INFO] Surefire report directory: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\stockprice-api\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.stockprice.api.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ stockprice-api ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\stockprice-api\target\stockprice-api-1.0.0.jar
+[INFO] 
+[INFO] ----------------< fullstack.stockmarket:stockprice-svc >----------------
+[INFO] Building stockprice-svc 1.0.0                                    [14/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ stockprice-svc ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stockprice-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ stockprice-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\stockprice-svc\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ stockprice-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\stockprice-svc\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ stockprice-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\stockprice-svc\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ stockprice-svc ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ stockprice-svc ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\stockprice-svc\target\stockprice-svc-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.2.RELEASE:repackage (default) @ stockprice-svc ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] -----------------< fullstack.stockmarket:gateway-svc >------------------
+[INFO] Building gateway-svc 1.0.0                                       [15/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for com.sun.jersey:jersey-servlet:jar:1.19.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The POM for com.sun.jersey:jersey-server:jar:1.19.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gateway-svc ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ gateway-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\gateway-svc\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway-svc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\gateway-svc\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ gateway-svc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\gateway-svc\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ gateway-svc ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ gateway-svc ---
+[INFO] Building jar: C:\Users\ChangLiu\.jenkins\workspace\stock-market-build\gateway-svc\target\gateway-svc-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.2.RELEASE:repackage (default) @ gateway-svc ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] FSD MicroServices Training Project 1.0 ............. SUCCESS [  0.193 s]
+[INFO] common-lib 1.0.0 ................................... SUCCESS [ 17.593 s]
+[INFO] company-api 1.0.0 .................................. SUCCESS [  6.848 s]
+[INFO] exchange-api 1.0.0 ................................. SUCCESS [  5.374 s]
+[INFO] sector-api 1.0.0 ................................... SUCCESS [  5.219 s]
+[INFO] company-svc 1.0.0 .................................. SUCCESS [ 10.955 s]
+[INFO] exchange-svc 1.0.0 ................................. SUCCESS [  8.310 s]
+[INFO] email-api 1.0.0 .................................... SUCCESS [  5.104 s]
+[INFO] email-svc 1.0.0 .................................... SUCCESS [  6.358 s]
+[INFO] user-api 1.0.0 ..................................... SUCCESS [  6.139 s]
+[INFO] user-svc 1.0.0 ..................................... SUCCESS [  6.934 s]
+[INFO] sector-svc 1.0.0 ................................... SUCCESS [  5.249 s]
+[INFO] stockprice-api 1.0.0 ............................... SUCCESS [  4.471 s]
+[INFO] stockprice-svc 1.0.0 ............................... SUCCESS [  7.822 s]
+[INFO] gateway-svc 1.0.0 .................................. SUCCESS [  4.601 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:42 min
+[INFO] Finished at: 2020-06-13T16:59:17+08:00
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

@@ -45,6 +45,8 @@ services:
       - SECTOR_DATASOURCE_URL
       - SECTOR_DATASOURCE_USERNAME
       - SECTOR_DATASOURCE_PASSWORD  
+    depends_on:
+      - gateway-service
     networks:
       - internal_access
       - external_access # db access
@@ -67,6 +69,8 @@ services:
       - STOCKPRICE_DATASOURCE_URL
       - STOCKPRICE_DATASOURCE_USERNAME
       - STOCKPRICE_DATASOURCE_PASSWORD 
+    depends_on:
+      - gateway-service
     networks:
       - internal_access
       - external_access # db access
@@ -88,6 +92,8 @@ services:
       - EXCHANGE_DATASOURCE_URL
       - EXCHANGE_DATASOURCE_USERNAME
       - EXCHANGE_DATASOURCE_PASSWORD
+    depends_on:
+      - gateway-service
     networks:
       - internal_access
       - external_access # db access
@@ -110,13 +116,15 @@ services:
       - USER_DATASOURCE_URL
       - USER_DATASOURCE_USERNAME
       - USER_DATASOURCE_PASSWORD 
+    depends_on:
+      - gateway-service
     networks:
       - internal_access
       - external_access # db access
 
   email-service:
-    build: ./user-svc
-    image: lchangcd/user-svc
+    build: ./email-svc
+    image: lchangcd/email-svc
     environment:
       - SPRING_PROFILES_ACTIVE
       - SERVER_PORT
@@ -132,6 +140,8 @@ services:
       - EXCHANGE_SERVICE_ENDPOINT
       - GATEWAY_SERVICE_ENDPOINT
       - EUREKA_SERVICE_ENDPOINT
+    depends_on:
+      - gateway-service
     networks:
       - internal_access
       - external_access # db access
@@ -162,6 +172,7 @@ services:
     image: lchangcd/stock-app
     networks:
       - internal_access
+    
   
 
 networks:

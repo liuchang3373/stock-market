@@ -1,0 +1,23 @@
+pipeline {
+   agent any
+
+   tools {
+      // Install the Maven version configured as "M3" and add it to the path.
+      maven "maven-3.6.3"
+   }
+
+   stages { 
+        stage('pull code from github') { 
+            steps { 
+               echo 'pulling code from github.' 
+               git  credentialsId: 'lchangcd', url: 'https://github.com/liuchang3373/stock-market'
+            }
+        }
+        stage('Build project') { 
+            steps { 
+               echo 'building project.' 
+               bat label: '', script: 'mvn clean package'
+            }
+        }
+    }
+}

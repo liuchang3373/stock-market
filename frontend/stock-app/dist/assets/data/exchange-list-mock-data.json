@@ -1,0 +1,30 @@
+[
+  {
+  "ID": 1,
+  "StockExchange": "BSE",
+  "Brief": "ASDASDAS",
+  "ContactAddress": "FASSDDDSAS",
+  "Remarks": "XXDASDASDAS"
+  }, 
+  {
+    "ID": 2,
+    "StockExchange": "ADS",
+    "Brief": "ASDASDAS",
+    "ContactAddress": "FASSDDDSAS",
+    "Remarks": "XXDASDASDAS"
+  },
+  {
+    "ID": 3,
+    "StockExchange": "CVD",
+    "Brief": "ASDASDAS",
+    "ContactAddress": "FASSDDDSAS",
+    "Remarks": "XXDASDASDAS"
+  },
+  {
+    "ID": 4,
+    "StockExchange": "SAE",
+    "Brief": "ASDASDAS",
+    "ContactAddress": "FASSDDDSAS",
+    "Remarks": "XXDASDASDAS"
+  }
+]

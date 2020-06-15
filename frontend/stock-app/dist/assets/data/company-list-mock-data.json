@@ -1,0 +1,42 @@
+[
+  {
+  "ID": 1,
+  "CompanyCode": "002931",
+  "CompanyName": "Facebook(FB)",
+  "Sector": "Tech",
+  "StockExchange": "US",
+  "CEO": "Zuckerberg",
+  "Turnover": 2367.23,
+  "About": "XXXXXXX"
+  }, 
+  {
+  "ID": 2,
+  "CompanyCode": "422133",
+  "CompanyName": "Amazon(AMZN)",
+  "Sector": "Tech",
+  "StockExchange": "US",
+  "CEO": "Jeff Bezos",
+  "Turnover": 512.26,
+  "About": "AAAAAAA"
+  },
+  {
+  "ID": 3,
+  "CompanyCode": "100122",
+  "CompanyName": "Apple(AAPL)",
+  "Sector": "Tech",
+  "StockExchange": "US",
+  "CEO": "Tim Cook",
+  "Turnover": 4925.63,
+  "About": "CCCCCC"
+  },
+  {
+    "ID": 3,
+    "CompanyCode": "100122",
+    "CompanyName": "Apple(AAPL)",
+    "Sector": "Tech",
+    "StockExchange": "US",
+    "CEO": "Tim Cook",
+    "Turnover": 4925.63,
+    "About": "CCCCCC"
+  }
+]

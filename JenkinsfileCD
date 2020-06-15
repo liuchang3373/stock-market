@@ -1,0 +1,19 @@
+pipeline {
+   agent any
+
+   tools {
+      // Install the Maven version configured as "M3" and add it to the path.
+      maven "maven-3.6.3"
+   }
+
+   stages { 
+        stage('direct to the workspace on jenkins') { 
+            steps { 
+                bat '''
+				cd C:/Users/ChangLiu/.jenkins/workspace/stock-market-build
+				docker-compose build
+				'''
+            }
+        }
+    }
+}

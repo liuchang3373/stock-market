@@ -1,0 +1,272 @@
+C:\Users\ChangLiu\git\hsd\stockmarket-parent>docker-compose build
+Building gateway-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/gateway-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> c804d43991bf
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> 87f5b295ba4c
+Step 4/5 : RUN sh -c 'touch gateway-svc-1.0.0.jar'
+ ---> Using cache
+ ---> 8775e27c5447
+Step 5/5 : ENTRYPOINT ["java", "-jar", "gateway-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> 1387d2678dcb
+
+Successfully built 1387d2678dcb
+Successfully tagged lchangcd/gateway-svc:latest
+Building email-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/email-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> 8aae5c90d63b
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> a1b6b980afe6
+Step 4/5 : RUN sh -c 'touch email-svc-1.0.0.jar'
+ ---> Using cache
+ ---> b7885cf65478
+Step 5/5 : ENTRYPOINT ["java", "-jar", "email-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> d4bd55f393ae
+
+Successfully built d4bd55f393ae
+Successfully tagged lchangcd/email-svc:latest
+Building user-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/user-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> 500ca3b199b5
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> 429994d2a62b
+Step 4/5 : RUN sh -c 'touch user-svc-1.0.0.jar'
+ ---> Using cache
+ ---> b0da0b704be8
+Step 5/5 : ENTRYPOINT ["java", "-jar", "user-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> e611a4b652cd
+
+Successfully built e611a4b652cd
+Successfully tagged lchangcd/user-svc:latest
+Building exchange-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/exchange-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> 399a2fa74a17
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> d16dbd8fa51c
+Step 4/5 : RUN sh -c 'touch exchange-svc-1.0.0.jar'
+ ---> Using cache
+ ---> ecb1e5ad4caf
+Step 5/5 : ENTRYPOINT ["java", "-jar", "exchange-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> 549a7ccdf6a5
+
+Successfully built 549a7ccdf6a5
+Successfully tagged lchangcd/exchange-svc:latest
+Building stockprice-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/stockprice-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> 7885ff53888b
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> 3bbf2d3933e0
+Step 4/5 : RUN sh -c 'touch stockprice-svc-1.0.0.jar'
+ ---> Using cache
+ ---> cb9c8a6e56c1
+Step 5/5 : ENTRYPOINT ["java", "-jar", "stockprice-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> 0c8b64408a8e
+
+Successfully built 0c8b64408a8e
+Successfully tagged lchangcd/stockprice-svc:latest
+Building sector-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/sector-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> bef9576db78e
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> ed7d43eeedbb
+Step 4/5 : RUN sh -c 'touch sector-svc-1.0.0.jar'
+ ---> Using cache
+ ---> 4e411d34b6de
+Step 5/5 : ENTRYPOINT ["java", "-jar", "sector-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> 23d8a3a1e1ec
+
+Successfully built 23d8a3a1e1ec
+Successfully tagged lchangcd/sector-svc:latest
+Building company-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/company-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> 748bdfcd0b07
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> 2b6925ca16ec
+Step 4/5 : RUN sh -c 'touch company-svc-1.0.0.jar'
+ ---> Using cache
+ ---> 87cefd5e62f5
+Step 5/5 : ENTRYPOINT ["java", "-jar", "company-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> 08dcb7ead855
+
+Successfully built 08dcb7ead855
+Successfully tagged lchangcd/company-svc:latest
+Building stockapp-service
+ERROR: No build stage in current context
+
+C:\Users\ChangLiu\git\hsd\stockmarket-parent>docker-compose build
+Building gateway-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/gateway-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> c804d43991bf
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> 87f5b295ba4c
+Step 4/5 : RUN sh -c 'touch gateway-svc-1.0.0.jar'
+ ---> Using cache
+ ---> 8775e27c5447
+Step 5/5 : ENTRYPOINT ["java", "-jar", "gateway-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> 1387d2678dcb
+
+Successfully built 1387d2678dcb
+Successfully tagged lchangcd/gateway-svc:latest
+Building email-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/email-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> 8aae5c90d63b
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> a1b6b980afe6
+Step 4/5 : RUN sh -c 'touch email-svc-1.0.0.jar'
+ ---> Using cache
+ ---> b7885cf65478
+Step 5/5 : ENTRYPOINT ["java", "-jar", "email-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> d4bd55f393ae
+
+Successfully built d4bd55f393ae
+Successfully tagged lchangcd/email-svc:latest
+Building user-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/user-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> 500ca3b199b5
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> 429994d2a62b
+Step 4/5 : RUN sh -c 'touch user-svc-1.0.0.jar'
+ ---> Using cache
+ ---> b0da0b704be8
+Step 5/5 : ENTRYPOINT ["java", "-jar", "user-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> e611a4b652cd
+
+Successfully built e611a4b652cd
+Successfully tagged lchangcd/user-svc:latest
+Building exchange-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/exchange-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> 399a2fa74a17
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> d16dbd8fa51c
+Step 4/5 : RUN sh -c 'touch exchange-svc-1.0.0.jar'
+ ---> Using cache
+ ---> ecb1e5ad4caf
+Step 5/5 : ENTRYPOINT ["java", "-jar", "exchange-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> 549a7ccdf6a5
+
+Successfully built 549a7ccdf6a5
+Successfully tagged lchangcd/exchange-svc:latest
+Building stockprice-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/stockprice-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> 7885ff53888b
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> 3bbf2d3933e0
+Step 4/5 : RUN sh -c 'touch stockprice-svc-1.0.0.jar'
+ ---> Using cache
+ ---> cb9c8a6e56c1
+Step 5/5 : ENTRYPOINT ["java", "-jar", "stockprice-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> 0c8b64408a8e
+
+Successfully built 0c8b64408a8e
+Successfully tagged lchangcd/stockprice-svc:latest
+Building sector-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/sector-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> bef9576db78e
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> ed7d43eeedbb
+Step 4/5 : RUN sh -c 'touch sector-svc-1.0.0.jar'
+ ---> Using cache
+ ---> 4e411d34b6de
+Step 5/5 : ENTRYPOINT ["java", "-jar", "sector-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> 23d8a3a1e1ec
+
+Successfully built 23d8a3a1e1ec
+Successfully tagged lchangcd/sector-svc:latest
+Building company-service
+Step 1/5 : FROM java:8-jdk-alpine
+ ---> 3fd9dd82815c
+Step 2/5 : COPY ./target/company-svc-1.0.0.jar /usr/app/
+ ---> Using cache
+ ---> 748bdfcd0b07
+Step 3/5 : WORKDIR /usr/app
+ ---> Using cache
+ ---> 2b6925ca16ec
+Step 4/5 : RUN sh -c 'touch company-svc-1.0.0.jar'
+ ---> Using cache
+ ---> 87cefd5e62f5
+Step 5/5 : ENTRYPOINT ["java", "-jar", "company-svc-1.0.0.jar"]
+ ---> Using cache
+ ---> 08dcb7ead855
+
+Successfully built 08dcb7ead855
+Successfully tagged lchangcd/company-svc:latest
+Building stockapp-service
+Step 1/3 : FROM nginx:alpine
+alpine: Pulling from library/nginx
+cbdbe7a5bc2a: Already exists                                                                                            10c113fb0c77: Pull complete                                                                                             9ba64393807b: Pull complete                                                                                             262f9908119d: Pull complete                                                                                             c4a057508f96: Pull complete                                                                                             Digest: sha256:b89a6ccbda39576ad23fd079978c967cecc6b170db6e7ff8a769bf2259a71912
+Status: Downloaded newer image for nginx:alpine
+ ---> 7d0cdcc60a96
+Step 2/3 : COPY /stock-app/dist /usr/share/nginx/html
+ ---> 46a4023a711b
+Step 3/3 : EXPOSE 80
+ ---> Running in da96d08305d1
+Removing intermediate container da96d08305d1
+ ---> 54ffd24274ef
+
+Successfully built 54ffd24274ef
+Successfully tagged lchangcd/stock-app:latest
