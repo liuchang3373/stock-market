@@ -163,7 +163,7 @@ services:
       - internal_access
       - external_access # db access
     ports:
-      - 80:80
+      - 8761:8761
 
   stockapp-service:
     build:
@@ -172,6 +172,7 @@ services:
     image: lchangcd/stock-app
     networks:
       - internal_access
+      - external_access
     ports:
       - 9000:80
   
