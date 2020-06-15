@@ -72,7 +72,7 @@ Jenkins build logs: https://github.com/liuchang3373/stock-market/blob/master/doc
 
 - **CD-Jenkins files**: https://github.com/liuchang3373/stock-market/blob/master/JenkinsfileCD
 
-Jenkins deploy logs: 
+Jenkins deploy logs: https://github.com/liuchang3373/stock-market/blob/master/document/jenkins/deployText.txt
 
 
 
